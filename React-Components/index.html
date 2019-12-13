@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,196 @@
     <!--<link rel="stylesheet" href="https://cdn.wcdc.comcast.com/learn/public/css/bundles/fonts.bundle.css">
     <link rel="stylesheet" href="https://cdn.wcdc.comcast.com/learn/public/css/bundles/all.bundle.css">-->
     <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:200,400,600&display=swap");
+
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 100%;
+            outline: 0;
+            vertical-align: baseline;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            background-color: #FAFAFA;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 200;
+            color: #4c4e61;
+        }
+
+        h1 span {
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #4c4e61;
+        }
+
+        p {
+            margin-top: 1em;
+            color: #a3a5ae;
+        }
+
+        header {
+            *width: 100%;
+            margin: 5rem auto;
+            text-align: center;
+        }
+
+        header p {
+            margin-top: 1.5em;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            *width: 80%;
+            height: 550px;
+            margin: auto;
+            background-color: pink;
+        }
+
+        .container .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 45%;
+            width: calc(100% / 3);
+            margin: auto 20px; 
+            padding: 2em;
+            box-shadow: 0px 8px 17px -5px #dce5ee;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .container .supervisor {
+            border-top: 4px solid #45d3d3;
+        }
+
+        .container .calc {
+            border-top: 4px solid #549ef2;
+        }
+
+        .container .midCol {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: calc(100% / 3);
+        }
+
+        .container .midCol .teamBuilder {
+            width: 100%;
+            margin: auto;
+            border-top: 4px solid #ea5353;
+        }
+
+        .container .midCol .karma {
+            width: 100%;
+            margin: auto;
+            border-top: 4px solid #fcaf4a;
+        }
+
+        .container img {
+            align-self: flex-end;
+        }
+
+        footer {
+            margin-top: 3em;
+        }
+
+        /*
+        @media screen and (max-width: 812px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            header {
+                width: 90%;
+            }
+
+            header p {
+                font-size: 13px;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+            }
+
+            .container .card {
+                width: 90%;
+                height: 250px;
+                margin: 0 auto 1em auto;
+            }
+
+            .container .midCol {
+                width: 100%;
+            }
+
+            .container .midCol .card {
+                width: 90%;
+                height: 250px;
+                margin: 0 auto 1em auto;
+            } 
+        }*/
+    </style>
 </head>
+
 <body>
-    <div id="root"></div>
+    <!--<div id="root"></div>-->
+
+    <div>
+        <header>
+            <h1>Reliable, efficient delivery<br /><span>Powered by Technology</span></h1>
+            <p>Our Artificial Intelligence powered tools use millions of project data <br /> points
+                to ensure that your project is successful</p>
+        </header>
+
+        <div class="container">
+            <div class="card supervisor">
+                <div>
+                    <h2>Supervisor</h2>
+                    <p>Monitors activity to identify project roadblocks</p>
+                </div>
+            </div>
+            <div class="midCol">
+                <div class="card teamBuilder">
+                    <div>
+                        <h2>Team Builder</h2>
+                        <p>Scans our talent network to create the optimal team for your project</p>
+                    </div>
+                </div>
+                <div class="card karma">
+                    <div>
+                        <h2>Karma</h2>
+                        <p>Regularly evaluates our talent to ensure quality</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card calc">
+                <div>
+                    <h2>Calculator</h2>
+                    <p>Uses data from past projects to provide better delivery estimates</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
 </body>
+
 </html>
