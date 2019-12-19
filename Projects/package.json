@@ -1,0 +1,22 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "contains each of the project I work on  ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dara S.",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.0",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.0"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2"
+  }
+}
