@@ -1,0 +1,107 @@
+
+header {
+  /*  background-image: linear-gradient(
+        to bottom right,
+        rgb(243, 235, 232), rgba(165, 189, 31, 0)),
+        url('../asset/img/header-bg.jpg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    padding: 0 5rem; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    
+    &__item {
+        font-family: 'Sans Serif';
+        display: inline-block;
+        padding: 0 2rem; 
+        font-size: 3rem; 
+    }
+
+    &__icon {
+        fill: rgb(16, 16, 17);  
+        width: 2.5rem; 
+        height: 2.5rem;
+        margin: 0 .5rem; 
+    }
+
+    &__link {
+        text-decoration: none;
+        color: rgb(83, 85, 85); 
+        font-weight: 400;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link:hover {
+        color: rgb(39, 26, 223); 
+    }
+
+    &__icon:hover {
+        fill: rgb(39, 26, 223); 
+    }
+}
+
+
+.hero__background {
+    background-image: linear-gradient(
+            to right,
+            rgba(54, 54, 58, 0.8),
+            rgba(39, 40, 43, 0.8)
+        ),
+        url('../asset/img/Hero-bg.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh; 
+
+    position: relative;
+    text-align: center;
+}
+
+.hero__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: all .2s;
+    animation: moveInLeft 2s ease-in;
+    
+    &--more {
+        text-decoration: none;
+        transition: all .2s;
+        -webkit-animation: readMore 10s linear 5s infinite alternate; 
+        animation: readMore 10s linear 5s infinite alternate; 
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes readMore {
+    0% { color:red; }
+    25%  { color:yellow; }
+    50%  { color:blue; }
+  75%  { color:green; }
+  100% { color:#fff; }
+}

@@ -1,11 +1,15 @@
 import React, { Component } from 'react'; 
 import ReactDOM from 'react-dom'; 
-import Header from '../Portfolio/components/header';
+//import { BrowserRouter as Router, Route, Link } from 'react-router-dom'; 
+// using global SASS files 
+import '../Shared/main.scss';
+
+import Home from '../Portfolio/Home';
 
 class App extends Component {
     render() {
         return(
-            <Header />
+            <Home />
         )
     }
 }

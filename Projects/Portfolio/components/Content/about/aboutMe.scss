@@ -1,0 +1,14 @@
+.about {
+    padding: 8rem; 
+    margin: 0 auto; 
+    width: 80%; 
+    border: 1px solid red; 
+}
+
+.heading-1 {
+    &__display {
+        color: rgba(107, 100, 100, 1); 
+        text-shadow: none;
+        text-transform: none;
+    }
+}
