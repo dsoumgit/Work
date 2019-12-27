@@ -1,14 +1,205 @@
 .about {
-    padding: 8rem; 
+    padding: 10rem 0; 
     margin: 0 auto; 
     width: 80%; 
-    border: 1px solid red; 
+
+    &__detail {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        &--me {
+            background-color: rgba(236, 243, 245, .5);
+            box-shadow: 0 0 5px 1px rgb(204, 200, 200);
+            flex: 0 0 70%; 
+            margin-right: 2rem; 
+            padding: 4rem; 
+        }
+
+        &--skills {
+            margin: 0 8rem; 
+        }
+
+        &--work {
+            background-color: rgba(236, 243, 245, .5);
+            box-shadow: 0 0 5px 1px rgb(204, 200, 200);
+            flex: 0 0 30%;
+            padding: 4rem;
+        }
+    }
 }
 
 .heading-1 {
     &__display {
         color: rgba(107, 100, 100, 1); 
         text-shadow: none;
+        text-transform: uppercase; 
+        font-family: 'Gentium Basic';
+    }
+
+    &__exp {
+        text-shadow: none;
+        color: rgb(37, 35, 39); 
         text-transform: none;
+        font-size: 3rem;
+        font-family: 'Sans Serif'; 
+        font-weight: 400;
+    }
+}
+
+// reuse style  
+.meter-bg {
+    height: 1.5rem; 
+    border-radius: 25px;
+    margin-right: .7rem; 
+}
+
+
+.tech {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); 
+    grid-template-columns: 6rem 1fr;  
+    //justify-content: center;
+    align-items: center;
+
+    &__icon {
+        align-self: center;
+    }
+
+    &__meter {
+        width: 100%; 
+        border-radius: 25px;
+        padding: .3rem; 
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        &--bg {
+            @extend .meter-bg; 
+        }
+
+        &--value {
+            color: #fc0a53;
+            font-family: 'Sans Serif';
+            font-weight: 600;
+        }
+
+        // HTML5
+        &--html5 {
+            box-shadow: 0 0 0 rgb(247, 148, 109);
+            border: 1px solid rgb(247, 148, 109);
+        }
+
+        // CSS3 
+        &--css3 {
+            box-shadow: 0 0 0 #1472B6;
+            border: 1px solid #1472B6; 
+        }
+
+        // JavaScript 
+        &--js {
+            box-shadow: 0 0 0 #F7DF1E;
+            border: 1px solid #F7DF1E;
+        }
+
+        // React 
+        &--react {
+            box-shadow: 0 0 0 #61DAFB;
+            border: 1px solid #61DAFB;
+        }
+
+        // jQuery 
+        &--jQuery {
+            box-shadow: 0 0 0 #0669AD;
+            border: 1px solid #0669AD;
+        }
+    }
+} 
+
+@function innerColor($color) {
+    @return $color; 
+}
+
+.inner--html5 {
+    background-color: rgb(247, 148, 109);
+    width: 80%; 
+    border: 1px solid rgb(247, 148, 109);
+}
+
+.inner--css3 {
+    background-color: #1472B6; 
+    width: 80%; 
+    border: 1px solid #1472B6; 
+}
+
+.inner--js {
+    background-color: #F7DF1E; 
+    width: 70%; 
+    border: 1px solid #F7DF1E; 
+}
+
+.inner--react {
+    background-color: #61DAFB; 
+    width: 60%; 
+    border: 1px solid #61DAFB; 
+}
+
+.inner--jQuery {
+    background-color: #0669AD; 
+    width: 50%; 
+    border: 1px solid #0669AD; 
+}
+
+.meter__value {
+    color: #000;  
+    font-weight: 600;
+    font-family: 'Sans Serif';
+    font-size: 1.5rem; 
+}
+
+.ps--logo {
+    width: 15rem; 
+}
+
+.exp {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__logo {
+        width: 8rem; 
+        height: 8rem;
+        border-radius: 50%; 
+        
+        &--comcast {
+            border: 1px solid #fff; 
+        //    box-shadow: 0 0px 2px 1px rgb(241, 112, 123); 
+        }
+    }
+
+    &__line {
+        width: 1px; 
+        height: 100px; 
+        background-color: lightgray;   
+    }
+
+    &__btn {
+        border: none; 
+        border-radius: 0;
+        font-size: 1.5rem; 
+        padding: 1.2rem;
+        color: #fff; 
+        background-color: rgba(18, 109, 228, .8);  
+        transition: all .2s;
+        transform: translateX(20deg); 
+    }
+
+    &__btn:hover {
+        cursor: pointer;
+        text-decoration: underline;
     }
 }
