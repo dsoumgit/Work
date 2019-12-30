@@ -1,0 +1,89 @@
+.work {
+    padding: 6rem; 
+    background-image: linear-gradient(
+        to bottom right,
+        rgba(83, 75, 75, 0.8), 
+        rgba(90, 76, 76, 0.8)), 
+        url('./img/Work-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; 
+    position: relative;
+
+    
+    &__company {
+        margin: 8rem auto; 
+     //   position: absolute;
+     //   top: 40%; 
+     //   left: 30%; 
+      //  transform: translate(-40%, -30%);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        // add margin for each child 
+        & > * {
+            margin: 2rem; 
+        }
+
+    }
+
+    &__name {
+        background-color: #fff;
+        padding: 2rem; 
+    }
+
+    &__items {
+        list-style: none;
+
+        li {
+            font-size: 1.5rem; 
+            font-family: 'Sans Serif';
+            line-height: 1.5;
+        }
+    }
+}
+
+
+.type {
+    position: relative;
+ 
+
+    img {
+        width: 20rem; 
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
+    }
+
+    &__more {
+        opacity: 0;
+    }
+
+    &__reveal:hover {
+        filter: blur(0); 
+    }
+}
+
+.view {
+    opacity: 0;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+
+    &--btn {
+        border: none; 
+        border-radius: 0; 
+        font-size: 2rem; 
+        font-family: 'Sans Serif';
+        background-color: rgb(92, 86, 86); 
+        color: #fff; 
+    }
+
+    &:hover {
+        opacity: 1;
+        transition: all .2;
+    }
+}

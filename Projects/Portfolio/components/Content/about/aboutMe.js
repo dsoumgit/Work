@@ -1,9 +1,9 @@
 import React from 'react';
 import './aboutMe.scss';
 //import PennStateLogo from '../about/Penn-state-logo.png'; 
-import ComcastLogo from '../about/Comcast-logo.png'; 
-import RevealLogo from '../about/Reveal.png';
-import BluecrossLogo from '../about/BlueCross.jpg'; 
+import ComcastLogo from '../about/img/Comcast-logo.png'; 
+import RevealLogo from '../about/img/Reveal.png';
+import BluecrossLogo from '../about/img/BlueCross.jpg'; 
 
 const About = () => {
 
@@ -32,7 +32,7 @@ const About = () => {
 
                             <div className="tech__meter tech__meter--html5">
                                 <div className="tech__meter--bg inner--html5"></div>
-                                <span className="meter__value">80%</span>
+                                <span className="meter__value"></span>
                             </div>
                         </div>
                         <div className="tech">

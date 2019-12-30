@@ -1,14 +1,14 @@
 import React from 'react';
 import '../global/sass/main.scss'; 
 import './header.scss';
-import logo from '../asset/img/Logo.png';
+//import logo from '../asset/img/Logo.png';
 
 const Header = () => {
     return (
         <div className="container">
             <header>
                 <div className="">
-                    <img src={logo} alt="Site Logo" />
+                    <h1>Logo</h1>
                 </div>
                 <nav>
                     <ul className="nav-list">

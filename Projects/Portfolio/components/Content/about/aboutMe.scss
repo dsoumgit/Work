@@ -122,9 +122,36 @@
 }
 
 .inner--html5 {
+    text-align: center;
     background-color: rgb(247, 148, 109);
     width: 80%; 
     border: 1px solid rgb(247, 148, 109);
+    transition: all .2s;
+    animation-name: html5MoveIn; 
+    animation-duration: 5s;
+
+
+    &:after {
+        content: "80%";
+        color: #fff; 
+        padding: 1.5rem; 
+        font-size: 1.5rem; 
+        font-weight: 600;
+        font-family: 'Sans Serif';
+        padding: 1rem; 
+    }
+}
+
+@keyframes html5MoveIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .inner--css3 {
