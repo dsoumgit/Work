@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './main.scss'; 
 import AboutMe from './about/aboutMe';
 import Work from './work/work';
+import Contact from './contact/contact';
 
 class Main extends Component {
 
@@ -10,6 +11,7 @@ class Main extends Component {
             <main>
                 <AboutMe />
                 <Work />
+                <Contact />
             </main>
         )
     }

@@ -85,20 +85,20 @@ const About = () => {
                     <div className="exp">
                         <div className="exp__comcast">
                             <img src={ComcastLogo} alt="Comcast Logo" className="exp__logo exp__logo--comcast" />
-                            <h4 className="heading-4">2019</h4>
+                            <h4 className="heading-4 heading-4__year">2019</h4>
                         </div>
                         <div className="exp__line"></div>
                         <div className="exp__reveal">
                             <img src={RevealLogo} alt="Reveal Logo" className="exp__logo" />
-                            <h4 className="heading-4">2015</h4>
+                            <h4 className="heading-4 heading-4__year">2015</h4>
                         </div>
                         <div className="exp__line"></div>
                         <div className="exp__bluecross">
                             <img src={BluecrossLogo} alt="Indepedence Blue Cross Logo" className="exp__logo" />
-                            <h3 className="heading-4">2014</h3>
+                            <h3 className="heading-4 heading-4__year">2014</h3>
                         </div>
                         <div className="exp__line"></div>
-                        <button className="exp__btn">See More</button>
+                        <button className="exp__btn">See Resume</button>
                     </div>
                 </div>
             </div>
