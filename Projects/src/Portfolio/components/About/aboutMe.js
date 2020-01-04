@@ -8,7 +8,7 @@ import BluecrossLogo from '../about/img/BlueCross.jpg';
 const About = () => {
 
     return (
-        <section className="about">
+        <section className="about" id="about-me">
             <div className="about__headings mb-large">
                 <h3 className="heading-3">About</h3>
                 <h1 className="heading-1 heading-1__display">Personal Details</h1>

@@ -1,18 +1,16 @@
-import React, { Component } from 'react'; 
+import React from 'react'; 
 import ReactDOM from 'react-dom'; 
-//import { BrowserRouter as Router, Route, Link } from 'react-router-dom'; 
 // using global SASS files 
 import '../Shared/main.scss';
+//import Home from './components/Home/home';
+import Home from './Portfolio/components/Home/home';
 
-import Home from '../Portfolio/Home';
-
-class App extends Component {
-    render() {
-        return(
-            <Home />
-        )
-    }
-}
+  const App = () => {
+  
+      return(
+          <Home />
+      )
+  }
 
 ReactDOM.render(
     <App />,

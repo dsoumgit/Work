@@ -11,7 +11,7 @@ class Work extends Component {
 
     render() {
         return(
-            <div className="work">
+            <div className="work" id="portfolio">
                 <h1 className="heading-1">Portfolio</h1>
                 <section className="company">
                     <div className="company__section company__section--comcast">
