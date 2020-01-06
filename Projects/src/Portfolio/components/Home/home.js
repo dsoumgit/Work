@@ -5,6 +5,8 @@ import Nav from '../Navigation/header';
 import About from '../About/aboutMe';
 import Portfolio from '../Work/work';
 import Contact from '../Contact/contact'; 
+import Disclaimer from '../Disclaimer/disclaimer';
+import Footer from '../Footer/footer';
 
 const Home = () => {
 
@@ -14,6 +16,8 @@ const Home = () => {
             <About />
             <Portfolio />
             <Contact />
+            <Disclaimer />
+            <Footer />
         </div>
         
     )

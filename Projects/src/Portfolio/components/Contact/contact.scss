@@ -1,12 +1,70 @@
 .contact {
     padding: 5rem; 
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    background-image: linear-gradient(
+        to bottom right, 
+        rgba(240, 172, 195, 0.6),
+        rgba(121, 187, 241, .7)
+    );
+    margin: 0 auto; 
+  //  display: flex;
+  //  flex-direction: row;
+  //  justify-content: space-around;
 
 }
 
 .form {
+    &__wrapper {
+        border-radius: 5px;
+      //  background-color: #f2f2f2; 
+        padding: 2rem; 
 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    &__label {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    &__name {
+        background-color: rgba(217, 239, 245, .5);
+        padding: 10px; 
+    }
+}
+
+.inputs {
+    width: 100%; 
+    padding: 1rem; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px; 
+    margin-bottom: 16px;
+}
+
+input[type=text],
+input[type=email] {
+    @extend .inputs; 
+}
+
+textarea {
+    @extend .inputs;
+    height: 200px; 
+    resize: none; 
+}
+
+.btn-submit {
+    //width: 100%;
+    padding: 1.5rem; 
+    font-size: 2rem; 
+    color: #fff; 
+    background-color: rgba(177, 9, 135, .5); 
+    border: 1px solid rgba(34, 32, 32, .6);
+    box-shadow: 0 0 2px 0px rgba(34, 32, 32, .6);
+
+    &:hover {
+        cursor: pointer;
+    }
 }
