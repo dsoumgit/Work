@@ -84,17 +84,17 @@ const About = () => {
                     <h1 className="heading-1 heading-1__exp mb-medium">Experience</h1>
                     <div className="exp">
                         <div className="exp__comcast">
-                            <img src={ComcastLogo} alt="Comcast Logo" className="exp__logo exp__logo--comcast" />
+                            <img src="https://res.cloudinary.com/djpzwzllb/image/upload/v1578338324/Comcast-logo_ttem3h.png" alt="Comcast Logo" className="exp__logo exp__logo--comcast" />
                             <h4 className="heading-4 heading-4__year">2019</h4>
                         </div>
                         <div className="exp__line"></div>
                         <div className="exp__reveal">
-                            <img src={RevealLogo} alt="Reveal Logo" className="exp__logo" />
+                            <img src="https://res.cloudinary.com/djpzwzllb/image/upload/v1578338323/Reveal_vylciw.png" alt="Reveal Logo" className="exp__logo" />
                             <h4 className="heading-4 heading-4__year">2015</h4>
                         </div>
                         <div className="exp__line"></div>
                         <div className="exp__bluecross">
-                            <img src={BluecrossLogo} alt="Indepedence Blue Cross Logo" className="exp__logo" />
+                            <img src="https://res.cloudinary.com/djpzwzllb/image/upload/v1578338324/BlueCross_jt31fp.jpg" alt="Indepedence Blue Cross Logo" className="exp__logo" />
                             <h3 className="heading-4 heading-4__year">2014</h3>
                         </div>
                         <div className="exp__line"></div>

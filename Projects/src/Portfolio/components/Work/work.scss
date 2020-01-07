@@ -3,15 +3,17 @@
       
     background-image: linear-gradient(
         to right bottom, 
-        rgba(28, 28, 31, 0.8), 
-        rgba(38, 38, 41, 1)
-    ), url('./img//Work-bg.jpg');
+        rgba(185, 185, 190, 0.8), 
+        rgb(235, 235, 240)
+    );
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 5rem; 
+   // padding: 5rem; 
+    padding: 4rem 0;   
 }
 
+/*
 .heading {
     color: rgba(255, 0, 0, .6);
     font-weight: 600;
@@ -22,16 +24,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+   // align-items: center;
 
     &__section {
-        margin: 2rem;
-        padding: 2rem; 
+    //    margin: 2rem;
+    //    padding: 2rem; 
         background-color: rgb(252, 247, 247);
         font-size: 2rem;
         font-family: 'Sans Serif';
-        //border: 1px solid lightgrey; 
-        box-shadow: 0 0 2px 2px rgba(236, 230, 230, .6);
-    //    opacity: 0;
+        box-shadow: 0 0 2px 2px rgba(236, 230, 230, 0.281);
 
         display: flex;
         flex-direction: column;
@@ -42,15 +43,29 @@
     }
 
     &__description {
-      margin: 4rem 0 0 4rem; 
-    //  padding: 3rem;
+        margin-top: 4rem; 
+        border-top: 1px solid rgba(97, 96, 96, 0.603);
+        padding-top: 2rem;
 
-        position: relative;
+    }
+
+    &__photo {
+    //    height: 260px; 
+    }
+
+    &__list {
+        font-size: 1.6rem;
+        margin: 1.5rem 0 0 3rem; 
+        line-height: 1.5;
     }
 }
 
 .photo {
-    width: 40rem;   
+    max-width: 100%;
+}
+
+.overview {
+   // font-family: 'Gentium Basic';
 }
 
 .text-display {
@@ -79,4 +94,95 @@
         cursor: pointer;
         text-decoration: underline;
     }
+}*/
+
+.sectionHeight {
+    width: 500px; 
+    height: 900px;  
+}
+
+
+.company {
+    margin: 0 2rem; 
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    // GLOBAL
+    &--heading2 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 3rem;
+        text-align: center;
+        padding: 1.6rem; 
+    }
+
+    &--heading3 {
+        font-family: 'Lucida Grande', 'sans-serif';
+        font-size: 2rem;
+        border-top: 1px solid rgba(167, 160, 160, 0.514);
+        color: rgba(95, 91, 91, 0.8);
+        margin: 0 2rem;
+        padding-top: 2rem;
+        padding-left: 2rem;  
+    }
+
+    &__photo {
+     //   width: 550px; 
+        height: 350px; 
+    }
+
+    &__description {
+        height: 200px;
+    }
+
+    &__list {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 0 3rem; 
+        line-height: 1.5;
+        padding-left: 3rem; 
+        font-family: 'sans serif';
+    }
+
+    &--comcast {
+        // set the height 
+        @extend .sectionHeight;
+
+        background-color: rgba(255, 255, 255, 0.74); 
+        border-top: 4px solid rgb(190, 6, 83);
+        margin-right: 1.5rem; 
+        color: rgb(121, 9, 9);
+    }
+
+    &--reveal {
+        @extend .sectionHeight;
+
+        background-color: rgba(255, 255, 255, 0.74); 
+        border-top: 4px solid rgb(6, 190, 89);
+        margin-right: 1.5rem;
+        color: rgb(6, 92, 11);
+    }
+
+    &--ibx {
+        @extend .sectionHeight;
+     //   margin: 2rem; 
+        background-color: rgba(255, 255, 255, 0.74); 
+        border-top: 4px solid rgb(23, 136, 212);
+        color: rgb(9, 61, 129);
+    }
+}
+
+.photo {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.company--tech {
+    margin: 2rem 3rem; 
+    
+    &__icon {
+        margin: 1rem;
+    }
+
 }
