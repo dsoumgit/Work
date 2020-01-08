@@ -1,6 +1,8 @@
 import React from 'react'; 
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'; 
-//import Home from './components/Home/home';
+// Lazy load 
+//import LazyLoad from 'react-lazyload'; 
+
+// PAGES 
 import Nav from '../Navigation/header';
 import About from '../About/aboutMe';
 import Portfolio from '../Work/work';
@@ -11,14 +13,14 @@ import Footer from '../Footer/footer';
 const Home = () => {
 
     return(
-        <div>
+        <React.Fragment>
             <Nav />
             <About />
-            <Portfolio />
+            <Portfolio /> 
             <Contact />
             <Disclaimer />
             <Footer />
-        </div>
+        </React.Fragment>
         
     )
 }

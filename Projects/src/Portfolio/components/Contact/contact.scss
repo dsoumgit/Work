@@ -13,6 +13,8 @@
 }
 
 .form {
+
+
     &__wrapper {
         border-radius: 5px;
       //  background-color: #f2f2f2; 
@@ -24,8 +26,10 @@
     }
 
     &__label {
-        font-size: 2rem;
-        font-weight: 600;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: rgb(155, 4, 147);
     }
 
     &__name {
@@ -59,12 +63,19 @@ textarea {
     //width: 100%;
     padding: 1.5rem; 
     font-size: 2rem; 
-    color: #fff; 
-    background-color: rgba(177, 9, 135, .5); 
+    color: #fff;  
+    background-color: rgba(88, 6, 68, 0.5); 
     border: 1px solid rgba(34, 32, 32, .6);
     box-shadow: 0 0 2px 0px rgba(34, 32, 32, .6);
+    border-radius: 5%; 
 
     &:hover {
         cursor: pointer;
+        background-color: rgb(12, 21, 148);
+        text-decoration: underline;
     }
+}
+
+.error {
+    border: 1px solid red; 
 }

@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../global/sass/main.scss';
 import './header.scss';
-//import logo from '../asset/img/Logo.png';
 
 const Header = () => {
     return (
@@ -20,7 +18,7 @@ const Header = () => {
                             <a href="#portfolio" className="nav-link">Portfolio</a>
                         </li>
                         <li className="nav-list__item">
-                            <a href="#contact" className="nav-link">Contact</a>
+                            <a href="#contact-me" className="nav-link">Contact</a>
                         </li>
                     </ul>
                 </nav>
