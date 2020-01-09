@@ -5,24 +5,45 @@
         rgba(240, 172, 195, 0.6),
         rgba(121, 187, 241, .7)
     );
-    margin: 0 auto; 
-  //  display: flex;
-  //  flex-direction: row;
-  //  justify-content: space-around;
+  //  margin: 0 auto; 
 
+    // 360px 
+    @media only screen and (min-width: 22.5em) {
+        padding: 1rem;
+    }
 }
 
 .form {
 
-
     &__wrapper {
         border-radius: 5px;
       //  background-color: #f2f2f2; 
-        padding: 2rem; 
+     //   margin: 0 8rem; 
+    //    padding: 2rem; 
 
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
+    //    align-items: center;
+
+        @media only screen and (max-width: 62.5em) {
+            flex-direction: column;
+        }
+    }
+
+    &__section {
+    //    margin-right: 3rem; 
+    //    flex: 0 0 50%;
+
+        @media only screen and (min-width: 62.5rem) {
+         //   border: 1px solid red;
+            margin-right: 3rem;
+        }
+    }
+
+    &__map {
+        margin-top: 3rem; 
+        align-self: center;
     }
 
     &__label {
@@ -35,6 +56,26 @@
     &__name {
         background-color: rgba(217, 239, 245, .5);
         padding: 10px; 
+    }
+}
+
+.iframe__map { 
+    width: 50vw;
+    height: 450px; 
+
+    // 360px 
+    @media only screen and (min-width: 22.5em) {
+        width: 90vw;
+    }
+
+    // 600px 
+    @media only screen and (min-width: 32.5em) {
+        width: 80vw;
+    }
+
+    // 1000px
+    @media only screen and (min-width: 62.5em) {
+        width: 50vw; 
     }
 }
 

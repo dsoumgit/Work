@@ -1,29 +1,43 @@
 .about {
     padding: 10rem 0; 
-    margin: 0 auto; 
-    width: 80%; 
+    margin: 0 5rem; 
+
+    // 360px 
+    @media only screen and (max-width: 22.5em) {
+     //   margin: 0;
+    }
+
+    @media only screen and (max-width: 37.5em) {    // 600px 
+        margin: 0;
+    }
 
     &__detail {
         display: flex;
         flex-direction: row;
         justify-content: center;
         
+        @media only screen and (max-width: 62.5em) {    // 1000px 
+            flex-direction: column;
+        }
+
+        
         &--me {
             background-color: rgba(236, 243, 245, .5);
             box-shadow: 0 0 5px 1px rgb(204, 200, 200);
-            flex: 0 0 70%; 
-            margin-right: 2rem; 
             padding: 4rem; 
         }
 
         &--skills {
             margin: 0 8rem; 
+
+            @media only screen and (max-width: 62.5em) {
+                margin: 0; 
+            }
         }
 
         &--work {
             background-color: rgba(236, 243, 245, .5);
             box-shadow: 0 0 5px 1px rgb(204, 200, 200);
-            flex: 0 0 30%;
             padding: 4rem;
         }
     }
@@ -42,7 +56,6 @@
         color: rgb(37, 35, 39); 
         text-transform: none;
         font-size: 3rem;
-        font-family: 'Sans Serif'; 
         font-weight: 400;
     }
 }
@@ -87,7 +100,6 @@
 
         &--value {
             color: #fc0a53;
-            font-family: 'Sans Serif';
             font-weight: 600;
         }
 
@@ -132,18 +144,17 @@
     background-color: rgb(247, 148, 109);
     width: 80%; 
     border: 1px solid rgb(247, 148, 109);
-    transition: all .2s;
-    animation-name: html5MoveIn; 
-    animation-duration: 5s;
+ //   transition: all .2s;
+ //   animation-name: html5MoveIn; 
+ //   animation-duration: 5s;
 
 
     &:after {
-        content: "80%";
+        content: "";
         color: #fff; 
         padding: 1.5rem; 
         font-size: 1.5rem; 
         font-weight: 600;
-        font-family: 'Sans Serif';
         padding: 1rem; 
     }
 }
@@ -187,7 +198,6 @@
 .meter__value {
     color: #000;  
     font-weight: 600;
-    font-family: 'Sans Serif';
     font-size: 1.5rem; 
 }
 

@@ -1,13 +1,11 @@
 
 header {
-  /*  background-image: linear-gradient(
-        to bottom right,
-        rgb(243, 235, 232), rgba(165, 189, 31, 0)),
-        url('../asset/img/header-bg.jpg'); 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;*/
     padding: 0 5rem; 
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba(240, 172, 195, 0.6),
+        rgba(121, 187, 241, .7)
+    );
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,10 +22,6 @@ header {
     padding: 3rem; 
     box-shadow: 0 0 2px 2px rgb(206, 201, 201);
     border-radius: 50%;
-
-    &:hover {
-        cursor: pointer;
-    }
 }
 
 .nav-list {
@@ -38,11 +32,8 @@ header {
         display: inline-block;
         padding: 1.8rem; 
         font-size: 1.8rem;  
-        background-color: rgb(7, 110, 114); 
         text-transform: uppercase;
         border-radius: 5%;
-
-        border-right: 1px solid #fff; 
     }
 
     &__icon {
@@ -69,23 +60,15 @@ header {
 
 .nav-link {
     text-decoration: none;
-    color: #fff;
-
-    /*
-    &:before {
-        content: "";
-        display: inline-block;
-        background: url('https://img.icons8.com/bubbles/50/000000/man-in-blue-jacket-information.png') no-repeat; 
-        background-size: cover;
-        width: 14px;
-    }*/
+    color: #000;
+    font-weight: 600;
+    transition: all .2s;
 
     &:hover {
-        color: rgb(7, 231, 127);   
+        color: #fff;   
         text-decoration: underline;      
     }
 }
-
 
 .hero__background {
     background-image: linear-gradient(
@@ -141,3 +124,4 @@ header {
   75%  { color:green; }
   100% { color:#fff; }
 }
+

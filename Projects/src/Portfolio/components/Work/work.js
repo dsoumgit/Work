@@ -10,9 +10,9 @@ class Work extends Component {
             <section className="work" id="portfolio">
                 <h1 className="heading-1 mb-medium">Portfolio</h1>
                 <div className="company">
-                    <div className="company--comcast">
+                    <div className="company--comcast mb-medium">
                         <h2 className="company--heading2 mb-small">Comcast</h2>
-                        <div className="company__photo">
+                        <div className="company__photo mb-medium">
                             <img src="https://res.cloudinary.com/djpzwzllb/image/upload/v1578340815/Comcast.png" alt="Comcast Photo" className="photo" />
                         </div>
                         <h3 className="company--heading3">Essential Duties:</h3>
@@ -49,9 +49,9 @@ class Work extends Component {
                             </svg>
                         </div>
                     </div>
-                    <div className="company--reveal">
+                    <div className="company--reveal mb-medium">
                         <h2 className="company--heading2 mb-small">Reveal</h2>
-                        <div className="company__photo">
+                        <div className="company__photo mb-medium">
                             <img src="https://res.cloudinary.com/djpzwzllb/image/upload/v1578340031/Reveal.png" alt="Reveal Photo 2" className="photo" />
                         </div>
                         <h3 className="company--heading3">Essential Duties:</h3>
@@ -86,9 +86,9 @@ class Work extends Component {
                         </div>
                     </div>
 
-                    <div className="company--ibx">
+                    <div className="company--ibx mb-medium">
                         <h2 className="company--heading2 mb-small">IBX</h2>
-                        <div className="company__photo">
+                        <div className="company__photo mb-medium">
                             <img src="https://res.cloudinary.com/djpzwzllb/image/upload/v1578341168/IBX.png" alt="IBX Photo" className="photo" />
                         </div>
                         <h3 className="company--heading3">Essential Duties:</h3>

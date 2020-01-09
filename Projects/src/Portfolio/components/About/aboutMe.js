@@ -28,7 +28,7 @@ const About = () => {
 
                             <div className="tech__meter tech__meter--html5">
                                 <div className="tech__meter--bg inner--html5"></div>
-                                <span className="meter__value"></span>
+                                <span className="meter__value">80%</span>
                             </div>
                         </div>
                         <div className="tech">

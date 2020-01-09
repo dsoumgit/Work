@@ -1,10 +1,29 @@
+// Font family 
+$font-primary: 'Josefin Sans', sans-serif;
 
-// Color variables 
-$color-grey-light-1: rgba(247, 243, 243, 0.103); 
+// RESPONSIVE BREAKPOINTS 
+$bp-largest: 75em;  // 1200px / 16px 
+$bp-larg: 62.5em;   // 1000px / 16px = 62.5em 
+$bp-medium: 50em;   // 800px / 16px 
+$bp-small: 31.25em; // 500px / 16px 
 
-$color-grey-dark-1: rgba(255, 255, 255, 0.103); 
 
-$color-green-light-1: rgb(179, 243, 182); 
-$color-green-light-2: rgb(59, 224, 53); 
-$color-green-dark-1: rgb(15, 136, 45); 
-$color-green-dark-2: rgb(6, 61, 10); 
+// Reset CSS 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; 
+    box-sizing: border-box;
+    font-family: $font-primary;
+
+    @media only screen and (min-width: $bp-largest) {
+    //    font-size: 50%;
+    }
+}
+
