@@ -10,6 +10,11 @@
     font-family: 'Trebuchet MS', sans-serif;
     text-transform: uppercase;
     text-shadow: 0 5px 5px #000;
+
+    // 500px
+    @media only screen and (max-width: 31.25em) {
+        font-size: 4rem; 
+    }
 }
 
 .heading-2 {
@@ -18,6 +23,11 @@
     color: #fff; 
     font-size: 4rem;
     text-shadow: 0 5px 5px #000;
+
+    // 500px
+    @media only screen and (max-width: 31.25em) {
+        font-size: 3rem; 
+    }
 }
 
 .heading-3 {

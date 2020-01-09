@@ -10,6 +10,13 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    // 600px 
+    @media only screen and (max-width: 37.5em) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .site-logo {
@@ -28,12 +35,19 @@ header {
     list-style: none;
 
     &__item {
-        font-family: 'Sans Serif';
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 600;
         display: inline-block;
         padding: 1.8rem; 
         font-size: 1.8rem;  
         text-transform: uppercase;
         border-radius: 5%;
+
+        // 500px
+        @media only screen and (max-width: 31.25em) {
+            font-size: 1.3rem; 
+            padding: .8rem;
+        }
     }
 
     &__icon {
@@ -54,7 +68,7 @@ header {
     }
 
     &__icon:hover {
-        fill: rgb(39, 26, 223); 
+        fill: rgb(26, 223, 197); 
     }
 }
 
@@ -93,35 +107,26 @@ header {
     transform: translate(-50%, -50%);
 
     transition: all .2s;
-    animation: moveInLeft 2s ease-in;
-    
+    animation: moveInLeft 2s ease;
+
     &--more {
         text-decoration: none;
-        transition: all .2s;
-        -webkit-animation: readMore 10s linear 5s infinite alternate; 
-        animation: readMore 10s linear 5s infinite alternate; 
     }
 }
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
+        top: -10px; 
     }
-
-    50% {
-        opacity: 0;
-    }
-
+    
     100% {
         opacity: 1;
+        top: 50%;
     }
 }
 
-@keyframes readMore {
-    0% { color:red; }
-    25%  { color:yellow; }
-    50%  { color:blue; }
-  75%  { color:green; }
-  100% { color:#fff; }
+.btn-link {
+    text-decoration: none;
+    color: rgb(249, 252, 250); 
 }
-
