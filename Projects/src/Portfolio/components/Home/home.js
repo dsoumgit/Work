@@ -1,6 +1,4 @@
 import React from 'react'; 
-// Lazy load 
-//import LazyLoad from 'react-lazyload'; 
 
 // PAGES 
 import Nav from '../Navigation/header';

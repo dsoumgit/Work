@@ -31,6 +31,12 @@ header {
     border-radius: 50%;
 }
 
+.site-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 3rem;
+}
+
 .nav-list {
     list-style: none;
 
@@ -79,8 +85,24 @@ header {
     transition: all .2s;
 
     &:hover {
-        color: #fff;   
-        text-decoration: underline;      
+        color: #fff;      
+        background-color: rgb(235, 103, 42);
+        padding: 1rem;
+        transition: all .2s ease;
+      
+        //  transform: translateX(-50%);
+      //  animation-name: navItemMoveLeft;
+      //  animation-duration: 3s;
+    }
+}
+
+@keyframes navItemMoveLeft {
+    from {
+        background-color: #fff; 
+    }
+
+    to {
+        background-color: rgb(92, 172, 247);
     }
 }
 
@@ -130,3 +152,4 @@ header {
     text-decoration: none;
     color: rgb(249, 252, 250); 
 }
+

@@ -60,9 +60,8 @@ class Work extends Component {
                                 <li>Develop and maintain web analytic apps to support various clients 
                                     for their supply chain performance </li>
                                 <li>Adhere to web standard and best practices for accessibility and usability</li>
-                                <li>Work alongside with Content Management team for xfinity.com website</li>
-                                <li>Assist with any front end work related issues</li>
-                                <li>Develop reusable component</li>
+                                <li>Integrate back-end RESTful data sources in OData, XML, and JSON</li>
+                                <li>Develop, troubleshoot, and maintain web analytic apps to support various clients for their supply chain performance</li>
                             </ul>
                         </div>
                         <h3 className="company--heading3 mb-small">Tech Stack:</h3>
@@ -94,12 +93,11 @@ class Work extends Component {
                         <h3 className="company--heading3">Essential Duties:</h3>
                         <div className="company__description mb-medium">
                             <ul className="company__list">
-                                <li>Participate in agile software development team for planning and grooming</li>
-                                <li>Develop new user-facing feature and reusable components</li>
-                                <li>Work alongside with Content Management team for xfinity.com website</li>
+                                <li>Developing, coding, debugging, and maintaining each module that is assigned </li>
+                                <li>Utilize Kony software to create multi-channel application across different platforms and various mobile devices</li>
+                                <li>Design and develop user interfaces for mobile applications and Member Portal using HTML, CSS, JavaScript</li>
                                 <li>Assist with any front end work related issues</li>
-                                <li>Develop reusable component</li>
-                                <li>Perform other related duties and responsibilities as assigned</li>
+                                <li>Work with designers, developers, business analysis to implement best practices</li>
                             </ul>
                         </div>
                         <h3 className="company--heading3 mb-small">Tech Stack:</h3>

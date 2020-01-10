@@ -2,11 +2,6 @@
     padding: 10rem 0; 
     margin: 0 5rem; 
 
-    // 360px 
-    @media only screen and (max-width: 22.5em) {
-     //   margin: 0;
-    }
-
     @media only screen and (max-width: 37.5em) {    // 600px 
         margin: 0;
     }
@@ -15,7 +10,10 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        
+
+        position: relative;
+        z-index: 0;
+
         @media only screen and (max-width: 62.5em) {    // 1000px 
             flex-direction: column;
         }
@@ -220,7 +218,6 @@
         
         &--comcast {
             border: 1px solid #fff; 
-        //    box-shadow: 0 0px 2px 1px rgb(241, 112, 123); 
         }
     }
 
@@ -230,19 +227,61 @@
         background-color: lightgray;   
     }
 
-    &__btn {
-        border: none; 
-        border-radius: 0;
-        font-size: 1.5rem; 
+    &__link {
+        text-decoration: none;
+        font-size: 2rem; 
         padding: 1.2rem;
         color: #fff; 
         background-color: rgba(18, 109, 228, .8);  
-        transition: all .2s;
-        transform: translateX(20deg); 
+
+        &:hover {
+            transition: all .2s;
+            transform: skewX(-10deg);
+        }
+    }
+}
+
+
+
+// Resume PDF 
+.resume {
+    background-color: rgba(44, 45, 46, 0.5);
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        left: 50%;
     }
 
-    &__btn:hover {
-        cursor: pointer;
-        text-decoration: underline;
+    &__pdf {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -42%); 
+    }
+
+    &__btn {
+        border: 0;
+        border-radius: none;
+        font-size: 2rem;
+        padding: 1rem; 
+        background-color: rgb(241, 48, 48);
+        box-shadow: 0 1px 0 1px rgb(209, 124, 124);
+        color: #fff;
+        transition: all .2s ease;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(241, 48, 48);
+            text-decoration: underline;
+            transform: scale(1.3);
+        }
     }
 }

@@ -14,12 +14,23 @@ const Disclaimer = () => {
                         <a href="#portfolio" className="list__link">Work</a>
                     </li>
                     <li className="list__item">
-                        <a href="#" className="list__link">Resources</a>
+                        <a href="" className="list__link">Resources</a>
                     </li>
-                    <li className="list__item">
-                        <a href="#" className="list__link">Web Development</a>
-                    </li>
-                </ul>
+                    </ul>
+                {/*<nav>
+                    <ul className="nav">
+                        <li className="nav-item"><a href="#" className="nav-link">About</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link">Work</a></li>
+                        <li className="nav-item"><a href="#" className="nav-link">Resources</a></li>
+                        <li className="nav-item"><a href="#">My Apps</a>
+                            <ul>
+                                <li><a href="#">item</a></li>
+                                <li><a href="#">item</a></li>
+                                <li><a href="#">item</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>*/ }
             </div>
             <div className="disclaimer__social">
                 <ul className="social">

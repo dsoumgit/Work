@@ -1,8 +1,30 @@
 import React from 'react';
 import './aboutMe.scss';
 import icons from '../global/public/spritesheet.svg';
+import Resume from './Updated_resume.pdf';
+
+const handleResume = (evt) => {
+    // prevent browser refresh 
+    evt.preventDefault();
+    // Get Resume id 
+    const resume = document.querySelector('#resume');
+    // set display to block 
+    resume.style.display = 'block';
+    // prevent scrolling in the body
+    document.body.style.overflow = 'hidden';
+}
+
+const handleClose = (evt) => {
+    // Get Resume id 
+    const resume = document.querySelector('#resume');
+    // set display to none 
+    resume.style.display = 'none';
+    // allow scrolling in the body
+    document.body.style.overflow = 'unset';
+}
 
 const About = () => {
+
 
     return (
         <section className="about" id="about-me">
@@ -18,7 +40,7 @@ const About = () => {
                         write clean semantic markups and layout that supports across different browsers and devices.
                         I have worked with senior developers, UI/UX designers, business analysis, and product owner
                         from different departments to deliver the quality software for customer.
-                    </p>
+                        </p>
                     <div className="about__detail--skills">
                         <h3 className="heading-3 mb-medium">My Top 5 Skills:</h3>
                         <div className="tech">
@@ -88,8 +110,19 @@ const About = () => {
                             <h3 className="heading-4 heading-4__year">2014</h3>
                         </div>
                         <div className="exp__line"></div>
-                        <button className="exp__btn">See Resume</button>
+                        <a href="#resume" className="exp__link" onClick={handleResume}>
+                            See Resume
+                            </a>
                     </div>
+                </div>
+            </div>
+
+            <div className="resume" id="resume">
+                <div className="resume__close">
+                    <button type="text" className="resume__btn" aria-label="Close Overlay" onClick={handleClose}>Close &times;</button>
+                </div>
+                <div className="resume__pdf">
+                    <embed src={Resume} width="800px" height="1200px" title="Test Name" />
                 </div>
             </div>
         </section>
