@@ -1,8 +1,10 @@
 import React from 'react'; 
 import ReactDOM from 'react-dom';
 // using global SASS files 
-import '../Shared/main.scss';
-import Home from './Portfolio/components/Home/home';
+//import '../Shared/main.scss';
+//import Home from './Portfolio/components/Home/home';
+
+import Home from './Youtube/components/Home';
 
   const App = () => {
   

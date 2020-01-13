@@ -1,0 +1,13 @@
+/* center the text to image */
+.video-item {
+    display: flex !important; 
+    align-items: center !important; 
+    cursor: pointer; 
+    border-bottom: 1px solid grey; 
+    padding: 15px 10px; 
+}
+
+.video-item.item img {
+    max-width: 140px;   /* set the image width to the max */
+    margin-right: 20px; 
+}

@@ -8,7 +8,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ["babel-loader"]
             },
-            {
+            /*{
                 test: /\.s[ac]ss$/i,
                 use: [
                     // Creates `style` nodes from JS strings
@@ -18,6 +18,10 @@ module.exports = {
                     // Compiles Sass to CSS
                     'sass-loader',
                 ],
+            },*/
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(png|svg|jpg|gif|pdf)$/,
@@ -34,6 +38,11 @@ module.exports = {
         path: __dirname + '/dist',
         publicPath: '/',
         filename: 'bundle.js'
+    },
+    devServer: {
+        host: "localhost",
+        port: 3030
+       // https: true
     }
     /*plugins: [
       new HtmlWebPackPlugin({
