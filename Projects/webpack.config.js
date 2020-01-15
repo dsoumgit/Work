@@ -41,7 +41,8 @@ module.exports = {
     },
     devServer: {
         host: "localhost",
-        port: 3030
+        port: 3030,
+        historyApiFallback: true 
        // https: true
     }
     /*plugins: [
