@@ -1,0 +1,5 @@
+/***************************************************************************************
+    This is a simple app to demonstrate how to work with Redux. 
+    I have installed additional package which is called redux-thunk.
+        It is a middleware to help make requests in a redux application. 
+****************************************************************************************
