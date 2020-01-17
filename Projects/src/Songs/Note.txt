@@ -1,0 +1,96 @@
+
+This is a small app that demonstrates how to work with React and Redux. 
+* Redux:
+    - It is a separate JavaScript library that can be used with React, Vue, Angular or any other framework
+    - It stores the object in a separate place that we can use to access without passing from each child to 
+        another child from parent component 
+    - Similar to using state in React but suitable for large scale application  
+    Packages:
+        - npm install redux react-redux 
+        - We need to install react-redux to connect redux with React 
+        - createStore(), combineReducers() are the two Redux methods to use 
+        - getState() would display the overview of entire state (ie. Departments from insurance company)
+        - Provider is the very top of hierachy and Connect communicates with the provider. Both two are 
+            from react-redux package. Connect communicate with Provider via context system, not through props.
+            Context system allows any parent component to communicate with direct child even there is a child 
+            component in between.
+
+
+/**** Example of Insurance Company ****/
+// Action Creator 
+const createPolicy = (name, amount) => {
+  return { // Action
+    type: 'CREATE_POLICY',
+    payload: {
+      name: name,
+      amount: amount
+    }
+  }
+};
+
+const createClaim = (name, amountToCollect) => {
+  return {
+    type: 'CREATE_CLAIM',
+    payload: {
+      name: name,
+      amount: amountToCollect
+    }
+  }
+};
+
+const deletePolicy = (name) => {
+  return {
+    type: 'DELETE_POLICY',
+    payload: {
+      name: name
+    }
+  }
+};
+
+
+// REDUCERS (Departments)
+const claimHistory = (oldListOfClaims = [], action) => {
+  if (action.type === 'CREATE_CLAIM') {
+    return [...oldListOfClaims, action.payload]
+  }
+  
+  return oldListOfClaims;
+}
+
+const accounting = (bagOfMoney = 100, action) => {
+  if (action.type === 'CREATE_CLAIM') {
+    return bagOfMoney - action.payload.amount;
+  } else if (action.type === 'CREATE_POLICY') {
+    return bagOfMoney + action.payload.amount;
+  }
+  
+  return bagOfMoney;
+}
+
+const policies = (listOfPolicies = [], action) => {
+  if (action.type === 'CREATE_POLICY') {
+    return [...listOfPolicies, action.payload.name];
+  } else if (action.type === 'DELETE_POLICY') {
+    return listOfPolicies.filter(name => { name !== action.payload.name });
+  }
+  
+  return listOfPolicies;
+}
+
+//console.log(Redux);
+const { createStore, combineReducers } = Redux; 
+
+const ourDepartments = combineReducers({
+    accounting: accounting, 
+    claimHistory: claimHistory, 
+    policies: policies
+}); 
+
+const store = createStore(ourDepartments);
+//const action = createPolicy('Dara', 20);
+//store.dispatch(action);
+store.dispatch(createPolicy('Jamie', 20));
+store.dispatch(createPolicy('Sam', 40));
+store.dispatch(createClaim('Dara', 50));
+//store.dispatch(deletePolicy('Jamie'));
+console.log(store.getState());             
