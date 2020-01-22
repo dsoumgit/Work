@@ -1,0 +1,55 @@
+/* Reset CSS */
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    color: #fff; 
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.photo {
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 2rem; 
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto; 
+    height: 100vh; 
+    background-color: rgb(109, 111, 240);
+}
+
+.content {
+    text-align: center;
+    padding: 10rem; 
+}
+
+.rain {
+    background-image: url('https://armory.visualsoldiers.com/wp-content/uploads/2019/05/Pur-CSS-Rain.gif');
+    background-position: center;
+    background-size: cover;
+}
+
+.snow {
+    background-image: url('https://thumbs.gfycat.com/AptConcernedBlackandtancoonhound-small.gif');
+    background-position: center;
+    background-size: cover;
+}
+
+.clear-sky { 
+    background-image: url('https://ak8.picdn.net/shutterstock/videos/19617598/thumb/1.jpg');
+    background-position: center;
+    background-size: cover;
+}

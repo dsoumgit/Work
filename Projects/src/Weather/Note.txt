@@ -1,0 +1,5 @@
+**************************************************************************
+  This is a simple app to display the season based on physical location using 
+    geolocation where user is located in the world and display the season on 
+    the UI. It shows how to work with fetch/axios, async, functional and class 
+    component, lifecycle methods. 

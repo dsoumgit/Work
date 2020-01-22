@@ -1,5 +1,51 @@
 /***************************************************************************************
     This is a simple app to demonstrate how to work with Redux. 
-    I have installed additional package which is called redux-thunk.
-        It is a middleware to help make requests in a redux application. 
+    Here are the goals: 
+        - To absolutely understand the purpose of reducers 
+        - To absolutely understand making API requests with Redux 
+        - To absolutely understand the purpose of redux-thunk
+    I have installed additional package which is called redux-thunk. It is a middleware 
+        to help make requests in a redux application. 
+    I use jsonplaceholder to work with fake API data.
+
+    * Here is the scenario of this app: 
+        + General Data Loading with Redux: 
+            - Component gets rendered onto the screen 
+            - Component's 'componentDidMount' method get called 
+            - We call action creator from 'componentDidMount'
+            - Action creator runs code to make an API request 
+            - API responds with data 
+            - Action creator returns an 'action' with the fetched data on the 'payload' property
+            - Some reducers see the action, returns the data off the 'payload'
+            - Because we generated some new state object, redux/react-redux cause our 
+                React app to be rerendered 
+
+    * REMEMBER: 
+        - We should not use API request inside of Action creator because it violates the rules of 
+            using Redux and also display errors which cause app to stop running because of using
+            async/await syntax inside of the function
+        - Action creators must return plain JS objects with a 'type' property
+        - By the time action gets to a reducer, we won't have fetched our data    
+            Action creator ---> action ----> dispatcher ----> reducers ---> state 
+            Between each step, the speed it gets from Action creator to reducers is really incredible 
+                fast. Using redux-thunk would solve the two problems above. 
+            + Synchronous action creator and Asynchronous action creator:   
+                - Synchronous action creator - instantly returns an action with data ready to go 
+                - Asynchronous action creator: 
+                    ~ Takes some amount of time for it to get its data ready to go 
+                    ~ Need to use middleware (i.e. redux-thunk) to help make requests   
+                    * Middleware in Redux: 
+                        - Diagram of the flow: displatch ---> middleware --> reducers
+                        - Dealing with async actions   
+                        - Function that gets called with every action we dispatch 
+                        - Has the ability to STOP, MODIFY, or otherwise mess around with actions 
+                        - Plenty of open source middleware we can use beside redux-thunk (most popular)
+                        - redux-thunk invokes the function and receives 'dispatch' and getState as two arguments 
+                            and use any data  
+
+    * Rules of Reducers in Redux: 
+        - Must return any value besides 'undefined'
+        - Produces 'state', or data to be used inside of the app using only previous state and the action 
+        - Must not return reach 'out of itself' to decide what value to return 
+        - Must not mutate its input 'state' argument                     
 ****************************************************************************************
