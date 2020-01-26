@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 62.5%; 
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #F0F0F0;
+}
+
+/*** Colors ****/
+:root {
+    --main-desaturated-red: hsl(0, 36%, 70%); 
+    --main-soft-red: hsl(0, 93%, 68%);
+}
+
+h1 {
+    font-size: 3.5rem; 
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: var(--main-desaturated-red); 
+    font-weight: 100;
+}
+
+h1 span {
+    font-weight: 100;
+    letter-spacing: 10px;
+    display: block;
+    color: #000;
+}
+
+
+h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.2rem;
+    color: var(--main-desaturated-red);
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+main {
+    background-image: linear-gradient(
+        to bottom right,
+        #F0F0F0,
+        #F0F0F0
+    )
+    url('./images/icon-arrow.svg');  
+}
+
+.hero {
+    display: flex;
+    
+}
+
+.card {
+    margin: 5rem auto;
+    background-color: #FFF7F8;
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0px 5px 5px rgba(187, 182, 182, 0.4);
+    display: flex;
+    justify-content: center;
+}
+
+.card-left {
+    *margin: 4rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    justify-content: flex-start;
+}
+
+.card__logo {
+
+}
+
+.card__body { 
+    width: 300px;
+}
+
+.card__email {
+    position: relative;
+}
+
+input[type='text'] {
+    border: 1px solid lightgrey;
+    border-radius: 20px 20px 20px 20px;
+    background-color: transparent;
+    width: 300px;
+    height: 40px;
+    padding: 20px;
+}
+
+::placeholder {
+    color: rgba(167, 163, 163, 0.486);
+}
+
+:focus {
+    outline: none;
+}
+
+.photo {
+    width: 100%;
+}
+
+.btn {
+    background-color: #F09699;
+    width: 75px;
+    height: 41px;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 25px 25px 25px 25px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(245, 118, 122);
+}
+
+.button {
+    background-color: #F09699;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 0 0px 5px 2px rgba(245, 118, 122, .3);;
+    width: 75px;
+    height: 41px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+#error {
+    width: 24px;
+    height: 24px;
+    background-image: url('./images/icon-error.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+    display: none;
+    position: absolute;
+    top: 8px;
+    right: 100px; 
+    
+}  
+
+.right-arr {
+    fill: var(--main-desaturated-red);
+}
+
+
+/*@media screen and (max-width: 900px) {
+    .card {
+        width: 100vw;
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .card__logo {
+        margin: 3rem;
+    }
+
+    .card__body {
+        align-self: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .photo {
+        max-width: 100%;
+    }
+
+    .desktop {
+        display: none;
+    }
+}*/
+
+
+/*@media screen and (min-width: 500px) {
+    
+    .card {
+        flex-direction: row;
+        border: 1px solid blue;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    .card {
+        *flex-direction: row;
+        *border: 1px solid red;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}*/
