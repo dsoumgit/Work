@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="form">
+      <div class="form-left">
+        <h1>Learn to code by watching others</h1>
+        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+          but understanding how developers think is invaluable. </p>
+      </div>
+      <div class="form-right">
+        <div class="form-heading">
+          <p>Try it free 7 days then $20/mo. thereafter</p>
+        </div>
+        <div class="form-body">
+            <div class="form-input">
+              <input type="text" id="fname" placeholder="First Name">
+                <img src="images/icon-error.svg" alt="Icon error" class="icon-error fname" />
+                <span class="error fname">First name cannot be empty</span>
+              </input>
+            </div>
+            <div class="form-input">
+              <input type="text" id="lname" placeholder="Last Name">
+                <img src="images/icon-error.svg" alt="Icon error" class="icon-error lname" />
+                <span class="error lname">Last name cannot be empty</span>
+              </input>
+            </div>
+            <div class="form-input">
+              <input type="text" id="email" placeholder="Email Address">
+                <img src="images/icon-error.svg" alt="Icon error" class="icon-error email" />
+                <span class="error email">First name cannot be empty</span>
+              </input>
+            </div>
+            <div class="form-input">
+              <input type="password" id="password" placeholder="Password">
+                <img src="images/icon-error.svg" alt="Icon error" class="icon-error password" />
+                <span class="error password">Password cannot be empty</span>
+              </input>
+            </div>
+            
+            <button type="submit" class="btn" onclick="submit()">Claim Your Free Trial</button>
+        
+          <div class="term">
+            <p>By clicking the button, you are agreeing to our <a href="#" class="term-link">Terms and Services</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function submit(evt) {
+      // get first name value 
+      var firstName = document.getElementById('fname').value;
+      var lastName = document.getElementById('lname').value; 
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var obj = {
+        fname: firstName,
+        lname: lastName,
+      //  email: email,
+        password: password
+      };
+      console.log(firstName);
+      // validate email 
+      let regEx = /^[\w.-]+@(?=[a-z\d][^.]*\.)[a-z\d.-]*[^.]$/;
+      
+      if (email.match(regEx)) {
+        // display icon error 
+        document.querySelector('.icon-error.email').style.display = 'none';
+        // display icon error 
+        document.querySelector('.error.email').style.display = 'none';
+      } else {
+        // display icon error 
+        document.querySelector('.icon-error.email').style.display = 'block';
+        document.querySelector('.error.email').style.display = 'block';
+      } 
+
+
+      for (let i in obj) {
+        console.log(i);
+        if (obj[i] === '') {
+          // display icon error 
+          document.querySelector('.icon-error.' + i).style.display = 'block';
+
+          document.querySelector('.error.' + i).style.display = 'block';
+        } else {
+          // display icon error 
+          document.querySelector('.icon-error.' + i).style.display = 'none';
+
+          document.querySelector('.error.' + i).style.display = 'none';
+
+        }
+      }
+    }
+  </script>
+</body>
+</html>
