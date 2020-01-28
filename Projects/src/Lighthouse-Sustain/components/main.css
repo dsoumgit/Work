@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; 
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem; 
+    margin-top: 5rem; 
+    margin-bottom: 2rem; 
+}
+
+.label {
+    font-size: 2rem; 
+    padding-right: 10px; 
+}
+
+/*
+.file-uploader {
+    width: 80%;
+    padding: 5rem; 
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(236, 245, 247, 0.342);
+    box-shadow: 0 0 10px 2px rgba(117, 115, 115, .3);
+}*/
+
+.file-uploader {
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(236, 245, 247, 0.342);
+    box-shadow: 0 0 10px 2px rgba(117, 115, 115, .3);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    animation: all .4s ease-in-out; 
+    animation-name: easeIn;
+    animation-delay: .3s;
+    animation-timing-function: linear;
+}
+
+@keyframes easeIn {
+    0% {
+        top: 0;
+    }
+
+    20% {
+        top: 20%;
+    }
+
+    50% {
+        top: 30%;
+    }
+    80% { top: 40% };
+    100% {
+        top: 50%;
+    }
+}
+
+.file-body {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    padding: 5rem; 
+    background-color: #fff;
+    box-shadow: 0 0 10px 2px rgba(117, 115, 115, .3);
+    align-self: center;
+}
+
+/* accessibility */
+.input-file {
+    font-size: 1.25em;
+    font-weight: 500;
+    display: inline-block;
+}
+
+
+.btn-submit { 
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    border: none; 
+    border-radius: 10px 10px 10px 10px; 
+    box-shadow: 0 0 4px 0px rgb(27, 36, 41);
+    background-color: lightskyblue;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: blue;
+    color: #fff;
+}
+
+/*
+input[type="file"] {
+    font-size: 1.5rem;
+    border: none;
+    border-radius: none;
+    background-color: lightskyblue;
+}
+*/
+

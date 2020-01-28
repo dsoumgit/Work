@@ -27,7 +27,7 @@ import reducers from './Songs/reducers/index';
 */
     
 
-
+/*
 // 'Blog' app with Redux 
 import Home from './Blog/components/Home';
 import { Provider } from 'react-redux'; 
@@ -36,16 +36,20 @@ import { createStore, applyMiddleware } from 'redux';
 // hook react-thunk middleware with Store 
 import thunk from 'redux-thunk'; 
 import reducers from './Blog/reducers/reducers'; 
-
-
-const App = () => {
-    // store 
+// store 
     const store = createStore(reducers, applyMiddleware(thunk));
-
-    return(    
-        <Provider store={store}>
+<Provider store={store}>
             <Home />
         </Provider>
+*/        
+
+// oVo Sustainment 
+import Home from './Lighthouse-Sustain/components/Home';
+
+const App = () => {
+    
+    return(    
+        <Home />
     )
 }
 
