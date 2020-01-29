@@ -1,0 +1,114 @@
+@import url('https://fonts.google.com/specimen/DM+Serif+Display');
+@import url('https://fonts.google.com/specimen/Karla');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; 
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+}
+
+/***** COLORS *******/
+:root {
+    /* Primary */
+    --color-primary-dark-violent: hsl(256, 26%, 20%);
+    --color-primary-grayish-blue: hsl(216, 30%, 68%);
+    /* Neutral */
+    --color-dark-violet: hsl(270, 9%, 17%);
+    --color-dark-grayish-violet: hsl(273, 4%, 51%);
+    --color-light-gray: hsl(0, 0%, 98%);
+}
+
+/***** TYPOGRAPHY *******/
+.heading-1 {
+    color: #fff; 
+}
+
+.heading-2 {
+    color: #000;
+}
+
+/***** MARGINS *****/
+.mb-small {
+    margin-bottom: 1rem;
+}
+
+.mb-medium {
+    margin-bottom: 2rem;
+}
+
+.mb-lg {
+    margin-bottom: 3rem;
+}
+
+/**** FONTS *****/
+header {
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/**** Desktop navigation ***/
+.nav-desktop {
+    display: none;
+}
+
+.nav-desktop ul {
+    list-style: none;
+}
+
+.nav-desktop ul > li {
+    display: inline-block;
+    margin: .5rem;
+    padding: 1rem 1rem;
+}
+
+.link-item {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav ul li:last-child {
+    border: 1px solid gray;
+}
+
+/***** Mobile navigation ******/
+.nav-mobile div {
+    background-color: rgb(145, 139, 139);
+    padding: 1px 5px;
+    margin: 4px 5px;
+    border-radius: 100px;
+}
+
+.nav-mobile {
+    width: 30px;
+    display: block;
+    margin: 10px 10px;
+    border: 2px solid gray;
+}
+
+.nav-mobile:hover div {
+    background-color: rgb(12, 178, 243);
+    animation: all .2s;
+    transform: scaleX(1.2);
+}
+
+/**** Hero ****/
+
+
+
+/***** MEDIA QUERIES *****/
+@media only screen and (min-width: 375px) {
+    .nav-mobile { display: none; }
+    .nav-desktop { display: block; }
+}
+
