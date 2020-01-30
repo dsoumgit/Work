@@ -174,7 +174,7 @@ input:focus {
 
 @media only screen and (min-width: 1250px) {
     .form {
-        width: 80vw;
+        width: 100vw;
         flex-direction: row;
         position: absolute;
         top: 50%;

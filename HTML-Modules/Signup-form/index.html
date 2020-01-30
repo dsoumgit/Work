@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="description" content="Landing page for mentor io">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">  
@@ -24,31 +25,31 @@
         </div>
         <div class="form-body">
             <div class="form-input">
-              <input type="text" id="fname" placeholder="First Name">
+              <input type="text" id="fname" aria-label="First Name" placeholder="First Name">
                 <img src="images/icon-error.svg" alt="Icon error" class="icon-error fname" />
                 <span class="error fname">First name cannot be empty</span>
               </input>
             </div>
             <div class="form-input">
-              <input type="text" id="lname" placeholder="Last Name">
+              <input type="text" id="lname" aria-label="Last Name" placeholder="Last Name">
                 <img src="images/icon-error.svg" alt="Icon error" class="icon-error lname" />
                 <span class="error lname">Last name cannot be empty</span>
               </input>
             </div>
             <div class="form-input">
-              <input type="text" id="email" placeholder="Email Address">
+              <input type="text" id="email" aria-label="Email" placeholder="Email Address">
                 <img src="images/icon-error.svg" alt="Icon error" class="icon-error email" />
                 <span class="error email">First name cannot be empty</span>
               </input>
             </div>
             <div class="form-input">
-              <input type="password" id="password" placeholder="Password">
+              <input type="password" id="password" aria-label="Password" placeholder="Password">
                 <img src="images/icon-error.svg" alt="Icon error" class="icon-error password" />
                 <span class="error password">Password cannot be empty</span>
               </input>
             </div>
             
-            <button type="submit" class="btn" onclick="submit()">Claim Your Free Trial</button>
+            <button type="submit" class="btn" aria-label="Submit" onclick="submit()">Claim Your Free Trial</button>
         
           <div class="term">
             <p>By clicking the button, you are agreeing to our <a href="#" class="term-link">Terms and Services</a></p>
@@ -58,51 +59,6 @@
     </div>
   </div>
 
-  <script>
-    function submit(evt) {
-      // get first name value 
-      var firstName = document.getElementById('fname').value;
-      var lastName = document.getElementById('lname').value; 
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-      var obj = {
-        fname: firstName,
-        lname: lastName,
-      //  email: email,
-        password: password
-      };
-      console.log(firstName);
-      // validate email 
-      let regEx = /^[\w.-]+@(?=[a-z\d][^.]*\.)[a-z\d.-]*[^.]$/;
-      
-      if (email.match(regEx)) {
-        // display icon error 
-        document.querySelector('.icon-error.email').style.display = 'none';
-        // display icon error 
-        document.querySelector('.error.email').style.display = 'none';
-      } else {
-        // display icon error 
-        document.querySelector('.icon-error.email').style.display = 'block';
-        document.querySelector('.error.email').style.display = 'block';
-      } 
-
-
-      for (let i in obj) {
-        console.log(i);
-        if (obj[i] === '') {
-          // display icon error 
-          document.querySelector('.icon-error.' + i).style.display = 'block';
-
-          document.querySelector('.error.' + i).style.display = 'block';
-        } else {
-          // display icon error 
-          document.querySelector('.icon-error.' + i).style.display = 'none';
-
-          document.querySelector('.error.' + i).style.display = 'none';
-
-        }
-      }
-    }
-  </script>
+  <script src="validation.js" async></script>
 </body>
 </html>
