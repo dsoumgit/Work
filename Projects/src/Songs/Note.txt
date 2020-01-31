@@ -5,10 +5,12 @@ This is a small app that demonstrates how to work with React and Redux.
     - It stores the object in a separate place that we can use to access without passing from each child to 
         another child from parent component 
     - Similar to using state in React but suitable for large scale application  
+    - Only one 'store' when using redux
     Packages:
         - npm install redux react-redux 
         - We need to install react-redux to connect redux with React 
-        - createStore(), combineReducers() are the two Redux methods to use 
+        - createStore(), combineReducers() are the two Redux methods to use
+        - reducers are the just the function  
         - getState() would display the overview of entire state (ie. Departments from insurance company)
         - Provider is the very top of hierachy and Connect communicates with the provider. Both two are 
             from react-redux package. Connect communicate with Provider via context system, not through props.

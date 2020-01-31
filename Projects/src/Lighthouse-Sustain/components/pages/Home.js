@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import './main.css';
-import CSVReader from 'react-csv-reader';
-import Papa from 'papaparse';
-import Main from './Main/main';
+import React, { Component } from "react";
+import '../main.css';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as postsActions from "../_actions/posts";
 
 class Home extends Component {
     constructor(props) {
@@ -43,9 +43,23 @@ class Home extends Component {
         }
     }
 
+    getPosts = () => {
+        this.props.postsActions.getPosts();
+        this.props.history.push("/posts");
+
+    //    this.props.dataActions.getData();
+
+    //    this.props.storeSomething.getPosts();
+    }
+
     render() {
         return(
             <div className="container">
+                <div className="page Home">
+                <h1>Home</h1>
+                <button onClick={this.getPosts}>Get Posts</button>
+            </div>
+
                 <div className="file-uploader">
                     <h1>Upload CSV</h1>
                     <div className="file-body">
@@ -60,4 +74,14 @@ class Home extends Component {
     }
 }
 
-export default Home; 
+const mapStateToProps = ({ posts }) => ({ posts });
+const mapDispatchToProps = dispatch => (
+    {
+        postsActions: bindActionCreators(postsActions, dispatch)
+    }
+); 
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

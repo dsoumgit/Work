@@ -44,12 +44,12 @@ import reducers from './Blog/reducers/reducers';
 */        
 
 // oVo Sustainment 
-import Home from './Lighthouse-Sustain/components/Home';
+import Main from './Lighthouse-Sustain/components/Main';
 
 const App = () => {
     
     return(    
-        <Home />
+        <Main />
     )
 }
 
