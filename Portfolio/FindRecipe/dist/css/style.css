@@ -19,10 +19,11 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #655A56;
-  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  background-image: linear-gradient(to bottom right, rgb(250, 165, 108), rgb(168, 236, 248));
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 2 * 4vw); }
+  min-height: calc(100vh - 2 * 4vw); 
+}
 
 .container {
   max-width: 120rem;
@@ -47,6 +48,7 @@ body {
   border: none;
   text-transform: uppercase;
   color: #fff;
+  font-weight: bold;
   cursor: pointer;
   display: flex;
   align-items: center;
