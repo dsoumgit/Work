@@ -1,0 +1,112 @@
+.container {
+    // occupy the available viewport's width 
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-2); 
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, .3); 
+
+    min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        // remove margins 
+        margin: 0; 
+        max-width: 100%;
+        width: 100%; 
+        min-height: 100vh;
+    }
+}
+
+.header {
+    font-size: 1.4rem; 
+    height: 7rem; 
+    background-color: #fff;
+    border-bottom: var(--line); 
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 11rem; 
+    }
+}
+
+// display sidebar and content side by side using flexbox 
+.content {
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        // change direction to display as stack 
+        flex-direction: column;
+    }
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+    // set the flex-basis (width) 
+    flex: 0 0 20%;  // left is 20% 
+    // REMEMBER: this is how we move the legal text to the bottom using column to change the main axis vertically 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $bp-small) {
+
+    }
+}
+
+.hotel-view {
+    background-color: var(--color-grey-light-5);
+    // element should grow as much as it can using 'flex-grow' or shortcut using 'flex'
+    flex: 1;
+}
+
+.detail {
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-5);
+    border-bottom: var(--line); 
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem; 
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        // stack 
+        flex-direction: column;
+    }
+}
+
+.description {
+    background-color: #fff; 
+    box-shadow: var(--shadow-light); 
+    padding: 3rem; 
+    flex: 0 0 60%; 
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        margin-right: 3rem; 
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+    }
+}
+
+.user-reviews {
+    flex: 1; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+        margin-top: 4rem;  
+        justify-content: center; 
+        align-items: center;
+    }
+
+    
+}
