@@ -1,0 +1,92 @@
+.story {
+    width: 75%; 
+    margin: 4rem auto; 
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+    font-size: $default-font-size;
+    // skewed 
+    transform: skewX(-12deg);
+    
+    // use direct child to make the content not skew 
+    & > * {
+        transform: skewX(12deg);
+    }
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem; 
+        padding-left: 7rem; 
+    }
+
+    @include respond(phone) {
+        transform: skewX(0); 
+        margin-bottom: 0;
+    }
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        background-color: orangered;
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-shape-outside: circle(50% at 50% 50%);
+
+        clip-path: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+
+        position: relative;
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
+    }
+
+    &__img {
+        height: 100%; // 100% of the parent element 
+        transform: translateX(-3rem) scale(1);
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    // transform the text to normal 
+    &__text {
+        transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+        }
+    }
+
+    // caption on top of image 
+    &__caption {
+        position: absolute;
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, 20%); 
+        color: $color-white; 
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        backface-visibility: hidden;
+        transition: all .5s;
+
+        @include respond(phone) {
+            transform: translate(0); 
+        }
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: skewY(5rem);
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+}

@@ -1,0 +1,228 @@
+/*
+    READ ME: 
+        when I started creating this stylesheet, the unit for each element is
+            in pixel. Then I convert to use rem relative unit for better
+            accessibility, sizes, spacing, and media queries. 
+        REM are a way of setting font-sizes based on the font-size of the 
+            root HTML element. A basic and most common example: html font-size 
+            is set to 10px.
+        Note: REM is not supported IE below 9 or older browser.    
+        The stylesheet is using Block Element Modifier (BEM) methodology. 
+*/
+
+/* set the reset to start it clean */
+*,
+*::after,
+*::before {
+    margin: 0; 
+    padding: 0; 
+    /* tells the browser to include border and padding with the element's width 
+        that is specified in the element */
+    *box-sizing: border-box; 
+    box-sizing: inherit;
+}
+
+/* Change to rem relative unit */
+html {
+    /* 1rem is 10px so it is the root font size and easy to replace with rem. */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    padding: 3rem;  /* 30px divide by 10px to get the rem */
+
+    box-sizing: border-box; 
+}
+
+.header {
+    /* With vw/vh, we can size elements to be relative to the size of the viewport.
+        This element is set to 95% of the viewport height. */
+    height: 95vh; /* if it is 100%, it would fit the whole viewport. */
+    /**** Add gredient on top of image:
+        - Color is going from left to right bottom. 
+        - Change opacity using rgba(red, green, blue, opacity)
+    */
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba(126, 213, 111, 0.8), #28b485), 
+        url('../img/hero.jpg');
+    background-size: cover; /* the image always try to fit the viewport as you resize it */
+    background-position: top;
+                    /* left top corner. 80vh is based on viewport as you resize. */
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    /* Position is set to relative because we need to position the child elements. */
+    position: relative; 
+}
+
+.header__logo-box {
+    /* Make sure the parent element is position to relative. */
+    position: absolute;
+    top: 4rem; 
+    left: 4rem; 
+}
+
+.header__logo {
+    height: 3.5rem; 
+    /* Note: Width will be figured out by the browser so no need to set the width. */
+}
+
+
+/* IMPORTANT: 
+    We need to substract 50% of the width and height to align the element in 
+        the center using translate(-50%, -50%) to reposition the element.
+*/
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;  
+    transform: translate(-50%, -50%);
+    /* align in the center */
+    text-align: center;
+}
+
+.heading-primary {
+    color: #fff; 
+    text-transform: uppercase;
+    /*
+        sets whether the back face of an element is visible when turned towards the user 
+            to remove little shaking. 
+    */
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+}
+
+ /* For both heading and subheading, we use span tag to divide the two
+    and display them as block-level element because it occupies the 
+    entire space of its parent element. */
+.heading-primary--main {
+    display: block;
+    font-size: 6rem; 
+    font-weight: 400; 
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+/* Create animation for both headings */
+@keyframes moveInLeft {
+    /* start at */
+    0% {
+        opacity: 0;
+        transform: translate(-10rem); /* x direction */
+    }
+
+    80% {
+        transform: translate(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); 
+    }
+}
+
+@keyframes moveInRight {
+    /* start at */
+    0% {
+        opacity: 0;
+        transform: translate(10rem); 
+    }
+
+    80% {
+        transform: translate(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); 
+    }
+}
+
+@keyframes moveInBottom {
+    /* start at */
+    0% {
+        opacity: 0;
+        transform: translateY(3rem); 
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); 
+    }
+}
+
+/* link psuedo classes */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase; 
+    text-decoration: none;
+    padding: 1.5rem 4rem; 
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 2s;
+    position: relative;
+    font-size: 1.6rem;
+}
+
+.btn:hover {
+    transform: translateY(-.1875rem);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, .2);
+    border: .0625rem solid lightgrey;
+    font-weight: 700;
+}
+
+
+/* when we click, it is called active psudo class */
+.btn:active {
+    transform: translateY(-.0625rem); 
+    box-shadow: 0 .3125rem .625rem rgba(0, 0, 0, .2);
+}
+
+.btn--white {
+    background-color: #fff;
+    color: #777; 
+}
+
+.btn::after {
+    content: ""; 
+    display: inline-block;
+    height: 100%; 
+    width: 100%; 
+    border-radius: 6.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn--white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; /* until other animation is completely loaded. */
+}

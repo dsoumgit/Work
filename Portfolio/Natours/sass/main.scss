@@ -1,0 +1,35 @@
+/*
+Note: 
+    The reason we import each of the SASS file is because we want to separate them 
+        and reuse it where we need to in the application. This file is main file 
+        that we import all the files we need.
+    This is CSS architecture and the way we construct the folders in a large 
+        application. It is better to start right from the beginning.  
+*/
+@import "abstracts/functions"; 
+@import "abstracts/mixins"; 
+@import "abstracts/variables"; 
+
+@import "base/base"; 
+@import "base/animations"; 
+@import "base/typography"; 
+@import "base/utilities"; 
+
+// COMPONENTS 
+@import "components/button"; 
+@import "components/composition";
+@import "components/feature-box";
+@import "components/card";
+@import "components/story";
+@import "components/bg-video";
+@import "components/form";
+@import "components/popup"; 
+
+// LAYOUTS 
+@import "layout/navigation";
+@import "layout/header"; 
+@import "layout/grid"; 
+@import "layout/footer";
+
+@import "pages/home";
+

@@ -1,0 +1,47 @@
+/* Create animation for both headings */
+@keyframes moveInLeft {
+    /* start at */
+    0% {
+        opacity: 0;
+        transform: translate(-10rem); /* x direction */
+    }
+
+    80% {
+        transform: translate(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); 
+    }
+}
+
+@keyframes moveInRight {
+    /* start at */
+    0% {
+        opacity: 0;
+        transform: translate(10rem); 
+    }
+
+    80% {
+        transform: translate(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); 
+    }
+}
+
+@keyframes moveInBottom {
+    /* start at */
+    0% {
+        opacity: 0;
+        transform: translateY(3rem); 
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); 
+    }
+}

@@ -1,0 +1,44 @@
+/* This is partial SASS file */ 
+
+/* set the reset to start it clean */
+*,
+*::after,
+*::before {
+    margin: 0; 
+    padding: 0; 
+    /* tells the browser to include border and padding with the element's width 
+        that is specified in the element */
+    *box-sizing: border-box; 
+    box-sizing: inherit;
+}
+
+/* Change to rem relative unit */
+html {
+    /* 
+       Note: Default size for all modern browsers is 16px. So here we reduce the entire
+        document to 62.5% which is 10px. See calculation below.
+        1rem is 10px so it is the root font size and easy to replace with rem. */
+    font-size: 62.5%;   // 1rem = 10px; 10px/16px = 62.5% 
+
+    @include respond(tab-land) { // width < 900
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25% 
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12, 12/16 = 75% 
+    }
+}
+
+body {
+    box-sizing: border-box; 
+    padding: 3rem;  /* 30px divide by 10px to get the rem */
+
+    @include respond(tab-port) {
+        padding: 0; 
+    }
+}

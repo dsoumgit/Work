@@ -1,0 +1,65 @@
+.header {
+    /* With vw/vh, we can size elements to be relative to the size of the viewport.
+        This element is set to 95% of the viewport height. */
+    height: 95vh; /* if it is 100%, it would fit the whole viewport. */
+    /**** Add gredient on top of image:
+        - Color is going from left to right bottom. 
+        - Change opacity using rgba(red, green, blue, opacity)
+    */
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+        url('../img/hero-small.jpg');
+    background-size: cover; /* the image always try to fit the viewport as you resize it */
+    background-position: top;
+                    /* left top corner. 80vh is based on viewport as you resize. */
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    /* Position is set to relative because we need to position the child elements. */
+    position: relative; 
+
+
+    // Responsive image for hero background  
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),
+            (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom, 
+            rgba($color-primary-light, 0.8), 
+            rgba($color-primary-dark, 0.8)), 
+            url('../img/hero.jpg');
+    }
+
+    @include respond(phone) {
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    // nested 
+    &__logo-box {
+        /* Make sure the parent element is position to relative. */
+        position: absolute;
+        top: 4rem; 
+        left: 4rem; 
+    }
+
+    &__logo {
+        height: 3.5rem; 
+        /* Note: Width will be figured out by the browser so no need to set the width. */
+    }
+
+    /* IMPORTANT: 
+        We need to substract 50% of the width and height to align the element in 
+            the center using translate(-50%, -50%) to reposition the element.
+    */
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;  
+        transform: translate(-50%, -50%);
+        /* align in the center */
+        text-align: center;
+    }
+
+    
+}
