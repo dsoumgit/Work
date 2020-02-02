@@ -1,0 +1,14 @@
+# Project Description
+    Develop a beautiful site for car enthusiast by providing rich user interface and user friendly.
+    The site provides best user experience and implement the latest technologies to increase productivity 
+    and meet web standards. 
+
+# Technologies 
+    HTML5 - video
+    CSS3
+    CSS3 Animation
+    SASS
+    JavaScript
+    Responsive Design
+    Autoprefixer
+    
