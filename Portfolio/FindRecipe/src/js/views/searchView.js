@@ -58,10 +58,73 @@ const renderRecipe = recipe => {
         `;
 
     // insert to the list item 
-    elements.searchResultList.insertAdjacentHTML('beforeend', markup);     
+    elements.searchResultList.insertAdjacentHTML('beforeend', markup);       
 }
-// create a method to for the results 
-export const renderList = recipes => {
+
+// create a pagination 
+
+// a method to show 10 results at a time  
+export const renderList = (recipes, page = 1, resultPerPage = 10) => {
+    // page 1 shows 10 items at a time
+    const start = (page - 1) * resultPerPage; 
+    // end 
+    const end = page * resultPerPage;
     // pass each object to the function 
-    recipes.products.forEach(renderRecipe);
+    recipes.products.slice(start, end).forEach(renderRecipe);
 }
+
+
+// create a function to show the result 10 items per page 
+/*export const renderList = (recipes, page = 1, resultPerPage = 10) => {
+    // start 
+    const start = 1;
+    // end 
+    const end = resultPerPage; 
+
+    // loop 
+    for (let i = start; i < recipes.products.length; i++) {
+        // check when i  is 10
+        if (i <= end) {
+            // 
+            renderRecipe(recipes.products[i]); 
+        }
+    }
+
+    // previous page  
+    const prevPage = `
+            <button class="btn-inline results__btn--prev">
+                <svg class="search__icon">
+                    <use href="img/icons.svg#icon-triangle-left"></use>
+                </svg>
+                <span>Page ${start}</span>
+            </button>
+        `;
+
+    const nextPage = `
+        <button class="btn-inline results__btn--next">
+            <span>Page 2</span>
+            <svg class="search__icon">
+                <use href="img/icons.svg#icon-triangle-right"></use>
+            </svg>
+        </button>
+        `;    
+
+    // insert to the DOM 
+    elements.resultsPage.insertAdjacentHTML('beforeend', prevPage);  
+    // insert to the DOM 
+    elements.resultsPage.insertAdjacentHTML('beforeend', nextPage);    
+}
+
+// get next page button
+// const nextPage = elements.resNextPage; 
+// console.log(nextPage);
+
+// // check after element is completely loaded 
+// if (nextPage) {
+//     // add event listener 
+//     nextPage.addEventListener('click', evt => {
+//         console.log('next page');
+//     });
+// }
+
+*/

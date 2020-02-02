@@ -9,7 +9,7 @@ import Search from './models/Search';
 // import all from searchView file 
 import * as searchView from './views/searchView';
 // DOM elements 
-import { elements } from './views/base';
+import { elements, renderLoader, clearLoader } from './views/base';
 
 /**
  * Create a global state that allows to store all the data such as 
@@ -38,10 +38,12 @@ const controlSearch = async () => {
         // clear list item 
         searchView.clearResults();
         // 3. maybe show busy indicator while requesting a new result
-
+        renderLoader(elements.searchResults);
         // 4. wait till the result is done 
         await state.search.getResults();
-        // 5. render the result on UI
+        // 5. clear the loader 
+        clearLoader();
+        // 6. render the result on UI
         searchView.renderList(state.search.result);
     }
 }
