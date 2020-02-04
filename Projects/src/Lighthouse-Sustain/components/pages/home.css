@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+.heading-1 {
+    text-shadow: 2px 2px 4px #222;
+}
+
+.file-wrapper {
+    margin: 5rem auto; 
+    animation: all .4s ease-in-out;
+    animation-name: slideDown;
+    animation-delay: .4s;
+    animation-timing-function: linear;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    20% { 
+        opacity: 0;
+        transform: translateY(-30%); 
+    }
+
+    50% { 
+        opacity: 0;
+        transform: translateY(-50%); 
+    }
+
+    80% { 
+        opacity: 0;
+        transform: translateY(-80%); 
+    }
+
+    100% { 
+        opacity: 1;
+        transform: translateY(1); 
+    };
+}
+
+header {
+    padding: 1rem; 
+    background: linear-gradient(to top right, rgba(107, 202, 247, 0.5), rgba(108, 205, 235, 0.8)); 
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.company-logo {
+    flex: 0 0 35%;
+}
+
+.file-upload {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed rgb(230, 30, 213);
+  background-color: lightgrey;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #000;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+footer {
+    padding: 2rem;
+    background-color: rgb(87, 88, 88);
+
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.social-icons {
+    align-self: center;
+}
+
+.social-icons ul {
+    list-style: none; 
+}
+
+.icon {
+    padding: 5px; 
+    color: rgb(226, 223, 223);
+    transition: all .2s;
+}
+
+.facebook:hover {
+    color: rgb(6, 49, 240);
+    transform: translateY(-10%);
+}
+
+.twitter:hover {
+    color: rgb(6, 174, 240);
+}
+
+.linkedin:hover {
+    color: rgb(6, 104, 143);
+}
+
+.youtube:hover {
+    color: rgb(243, 52, 116);
+}
+
+.google-plus:hover {
+    color: rgb(247, 9, 68);
+} 
+
+.footer {
+    padding: 10px;
+    text-align: center;
+    color: rgba(247, 243, 243, .5); 
+    font-size: .8rem;
+}
+

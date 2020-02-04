@@ -1,7 +1,7 @@
-Objective:
-    - Allow client to upload csv file that contains information about their tickets  
-        and be able to view the data in graphical charts by yearly, monthly,
-        and weekly. 
+# Project Overview:
+  Reveal's Sustainment is designed to help organizations continue their journey to Business Maturity. Reveal developed this concept to meet 
+    and exceed business goals by leveraging SAP investment through drive change and ongoing transformation.  
+    - Allow client to upload csv file that contains information about analytics and reporting to improve decision making.
 
 Tech Stack: 
   - papaparse library to convert csv to json 
