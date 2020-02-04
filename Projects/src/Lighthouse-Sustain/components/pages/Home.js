@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './home.css';
 import logo from '../img/reveal-logo-1.png';
+import Papa from 'papaparse';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as postsActions from "../_actions/posts";
@@ -23,26 +24,27 @@ class Home extends Component {
             header: true,
             dynamicTyping: true,
             complete: results => {
-                console.log(results);
+                // hide 
+                document.querySelector('.image-upload-wrap').style.display = 'none'; 
+                document.querySelector('.file-upload-content').style.display = 'block';
+                document.querySelector('.filename').innerHTML = `${file.name} selected`;
                 // update the state 
                 this.setState({ isFile: true, data: results.data });
             }, 
             error: (err, file) => {
                 console.log(error);
             }
-        });*/
+        });
     }
 
     onUpload = () => {
-        console.log('click');
         // get data from state 
         const data = this.state.data;
-        // check 
-        if (data.length === 0) {
-            return <div>zero</div>
-        } else {
-            return <div>Hello</div>
-        }
+        // check the result 
+        if (data.length > 0) {
+            // navigate to the page 
+            this.props.history.push('/main');
+        } 
     }
 
     getPosts = () => {
@@ -57,16 +59,6 @@ class Home extends Component {
     render() {
         return(
             <div className="container">
-                {/*<div className="file-uploader">
-                    <h1>Upload CSV</h1>
-                    <div className="file-body">
-                        <input type="file" id="file" className="input-file" name="file" accept=".csv" onChange={this.onReadFile} onClick={(event) => event.target.value} />
-                        <div className="btn-submit">
-                            <button type="submit" className="btn" onClick={this.onUpload}>Upload</button>
-                        </div>
-                    </div>
-        </div>*/}
-                
                 <header>
                     <div className="company-logo">
                         <img src={logo} alt="Reveal Logo" />
@@ -76,20 +68,25 @@ class Home extends Component {
                     </div>
                 </header>
 
-
                 <div className="file-wrapper">
-                    <div class="file-upload">
-                        <div class="image-upload-wrap">
-                            <input class="file-upload-input" type="file" accept=".csv" onChange={this.onReadFile}  />
-                            <div class="drag-text">
-                            <h3>Drag and drop or select a file (.csv)</h3>
+                    <div className="file-upload">
+                        <div className="image-upload-wrap">
+                            <input className="file-upload-input" type="file" accept=".csv" onChange={this.onReadFile}  />
+                            <div className="drag-text">
+                                <h3>Upload a file (.csv)</h3>
                             </div>
                         </div>
-                        <div class="file-upload-content">
-                            <img class="file-upload-image" src="#" alt="your image" />
-                            <div class="image-title-wrap">
-                            <button type="button" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-                            </div>
+                        <div className="file-upload-content">
+                            <p className="filename"></p>
+                            {/*<img className="file-upload-image" src="#" alt="CSV file" />
+                            <div className="image-title-wrap">
+                                <button type="button" className="remove-image">Remove <span className="image-title">Uploaded Image</span></button>
+        </div>*/}
+                        </div>
+                        <div className="submit">
+                            <button type="button" className="btn-submit" onClick={this.onUpload}>
+                                <i className="fa fa-paper-plane"></i> Submit
+                            </button>
                         </div>
                     </div>
                 </div> 

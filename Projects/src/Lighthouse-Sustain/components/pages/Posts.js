@@ -9,12 +9,12 @@ const Posts = props => {
         <Link to="/">&lt; Home</Link>
       </h5>
       <h1>Posts</h1>
-      {props.posts.map(post => (
+      {/*props.posts.map(post => (
         <div key={post.id}>
           <h5>{post.title}</h5>
           <p>{post.body}</p>
         </div>
-      ))}
+      )) */}
     </div>
   );
 };

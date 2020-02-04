@@ -1,0 +1,118 @@
+.main-container {
+    padding: 15px;
+    background-color: rgb(31, 13, 61);
+    max-width: 100%;
+}
+
+.menu-open {
+    transform: translateX(200px);
+    
+}
+
+.nav-menu { 
+    border-right: 2px solid rgba(200, 200, 200, .1);
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 200px; 
+    height: 100vh;
+    z-index: 0;
+    transform: translateX(-100%); /* off the screen */
+}
+
+.nav-menu .site-logo {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.nav-menu .site-logo img {
+    max-width: 60%;
+}
+
+.nav-menu ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    text-align: center;
+    border-bottom: 2px solid rgba(200, 200, 200, 0.1);
+    padding: 20px;
+}
+
+.nav-menu ul li:first-of-type {
+    border-top: 2px solid rgba(200, 200, 200, 0.1);
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.nav-menu ul li a:hover {
+    text-decoration: underline;
+} 
+
+.menu-item {
+    display: block;
+    color: rgb(6, 226, 17);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.request,
+.request-link {
+    color: coral;
+}
+
+.point,
+.point-link {
+    color: rgb(7, 211, 75);
+}
+
+.functional,
+.functional-link {
+    color: rgb(62, 161, 241);
+}
+
+.contact,
+.contact-link {
+    color: rgb(133, 128, 128);
+}
+
+.toggle {
+    padding: 5px;
+    background-color: rgb(36, 50, 250);
+    border: 1px solid rgb(17, 80, 253);
+    color: #000;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: all .2s; 
+}
+
+.toggle:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(31, 112, 218);
+    transform: scale(1.1);
+}
+
+.main-header {
+  color: #000;
+  position: relative;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.main-header h1 {
+  margin: 0;
+}
+
+.main-header p {
+  margin: 30px 0;
+}

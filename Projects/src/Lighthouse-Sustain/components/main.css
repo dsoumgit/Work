@@ -1,3 +1,9 @@
+:root {
+    --modal-duration: 1s;
+    --primary-color: #30336b;
+    --secondary-color: #be2edd;
+}
+
 * {
     margin: 0;
     padding: 0;
