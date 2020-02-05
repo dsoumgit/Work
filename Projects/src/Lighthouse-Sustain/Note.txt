@@ -5,4 +5,29 @@
 
 Tech Stack: 
   - papaparse library to convert csv to json 
-  - 
+  - hightcharts js 
+
+
+
+/****
+ * Dashboard page shows the number of Open vs Closed tickets for each month in the current year. We count how many Open vs
+ *  Closed tickets request have been created or closed for each month. 
+ *	The data report in the table shows the Open ticket requests during the first five days.
+ *  The SLA Tracker shows three Severities except Innovation from Priority column. This will track how well we meet our
+ *		SLA's to the clients by percentage. The SLA calculation will calculate the SoD Teams First Response rate. 
+ *		First response rate is how quickly are we responding to client's tickets per the SLA. Below is the calculation:
+ *			SEV 1 = 1 hour = 60 mins
+ *			SEV 2 = 2 hours = 120 mins 
+ *			SEV 3 = 1 day = 1440 mins
+ *		We filter by each SEV and count the number of entries then filter by FirstResponseInMin column that meet each condition 
+ *		above. See the calculation below:
+ *			(Total Entries of ResponseTime * 100) / (ResponseInMin	< each SEV) 
+ *		In the Excel file, we'll see the FirstResponseInMin column. This value will give the time in minutes when the
+ *			ticket was first responded to. This will need to be compared to the SEV x time above. 
+ *  The current points consumption for the current month. This will have three parts to it, it will combine innovation
+ *		ticket points, SDM points, and ticket points. The SDM points store in the global file. Each client will have a
+ *		different monthly point bucket. 
+ *		One bucket for INNOVATION points 
+ *		One bucket for SDM points (from global file)
+ *		One bucket for all closed tickets that are not INNOVATION or SDM 
+ */

@@ -10,7 +10,7 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isFile: false,
+            errorMsg: '',
             data: []
         }
     }
@@ -18,13 +18,13 @@ class Home extends Component {
     onReadFile = (evt) => {
         // get file 
         const file = evt.target.files[0];
-        console.log(file);
         // read the file 
         Papa.parse(file, {
             header: true,
             dynamicTyping: true,
             complete: results => {
                 // hide 
+                document.querySelector('.error-message').style.display = '';
                 document.querySelector('.image-upload-wrap').style.display = 'none'; 
                 document.querySelector('.file-upload-content').style.display = 'block';
                 document.querySelector('.filename').innerHTML = `${file.name} selected`;
@@ -42,9 +42,38 @@ class Home extends Component {
         const data = this.state.data;
         // check the result 
         if (data.length > 0) {
-            // navigate to the page 
-            this.props.history.push('/main');
-        } 
+            // 1. get the first object in an array since they all have the same column names 
+            const obj = data[0];
+            // 2. check the column names to make sure they are valid 
+            for (let k in obj) {
+                // 3. specify the column names 
+                if (obj.hasOwnProperty('Number') && obj.hasOwnProperty('Ticket#') && obj.hasOwnProperty('Age') 
+                    && obj.hasOwnProperty('Title') && obj.hasOwnProperty('Created') && obj.hasOwnProperty('Changed')
+                    && obj.hasOwnProperty('Close Time') && obj.hasOwnProperty('Queue') && obj.hasOwnProperty('State') 
+                    && obj.hasOwnProperty('Priority') && obj.hasOwnProperty('Customer User') && obj.hasOwnProperty('CustomerID') 
+                    && obj.hasOwnProperty('Service') && obj.hasOwnProperty('SLA') && obj.hasOwnProperty('Type') 
+                    && obj.hasOwnProperty('FirstResponseInMin') && obj.hasOwnProperty('SolutionTime') && obj.hasOwnProperty('SolutionInMin') 
+                    && obj.hasOwnProperty('SolutionDiffInMin') && obj.hasOwnProperty('StateType') && obj.hasOwnProperty('Points') 
+                    && obj.hasOwnProperty('Functional Area') ) {
+                    
+                    // hide error message
+                    document.querySelector('.error-message').style.display = '';
+                    // navigate to the page and pass state as an argument 
+                    this.props.history.push('/dashboard', data);
+                } else {
+                    // invalid column names 
+                    document.querySelector('.error-message').style.display = 'block';
+                    // update the error message 
+                    { this.setState({errorMsg: 'Column names are not correct!'})};
+                }
+            }
+
+            
+        } else {
+            document.querySelector('.error-message').style.display = 'block';
+            // update the error message 
+            { this.setState({errorMsg: 'File Not Found!'})};
+        }
     }
 
     getPosts = () => {
@@ -57,6 +86,7 @@ class Home extends Component {
     }
 
     render() {
+
         return(
             <div className="container">
                 <header>
@@ -69,6 +99,10 @@ class Home extends Component {
                 </header>
 
                 <div className="file-wrapper">
+                    <div className="error-message">
+                        <i className="fas fa-exclamation-circle"></i>
+                        { this.state.errorMsg }
+                    </div>
                     <div className="file-upload">
                         <div className="image-upload-wrap">
                             <input className="file-upload-input" type="file" accept=".csv" onChange={this.onReadFile}  />
@@ -78,10 +112,6 @@ class Home extends Component {
                         </div>
                         <div className="file-upload-content">
                             <p className="filename"></p>
-                            {/*<img className="file-upload-image" src="#" alt="CSV file" />
-                            <div className="image-title-wrap">
-                                <button type="button" className="remove-image">Remove <span className="image-title">Uploaded Image</span></button>
-        </div>*/}
                         </div>
                         <div className="submit">
                             <button type="button" className="btn-submit" onClick={this.onUpload}>
@@ -91,15 +121,16 @@ class Home extends Component {
                     </div>
                 </div> 
 
+
                 <footer>
                     <div className="social-icons">
                         <ul>
                             <li>
-                                <a href="https://www.facebook.com/RevealValue/" className="icon facebook"><i className="fa fa-facebook"></i></a>
-                                <a href="https://twitter.com/revealusa" className="icon twitter"><i className="fa fa-twitter"></i></a>
-                                <a href="https://www.linkedin.com/company/reveal-usa-inc/" className="icon linkedin"><i className="fa fa-linkedin"></i></a>
-                                <a href="https://www.youtube.com/user/RevealValueUSA" className="icon youtube"><i className="fa fa-youtube"></i></a>
-                                <a href="https://plus.google.com/106284037178750474606" className="icon google-plus"><i className="fa fa-google-plus"></i></a>
+                                <a href="https://www.facebook.com/RevealValue/" className="icon facebook"><i className="fab fa-facebook"></i></a>
+                                <a href="https://twitter.com/revealusa" className="icon twitter"><i className="fab fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/company/reveal-usa-inc/" className="icon linkedin"><i className="fab fa-linkedin"></i></a>
+                                <a href="https://www.youtube.com/user/RevealValueUSA" className="icon youtube"><i className="fab fa-youtube"></i></a>
+                                <a href="https://plus.google.com/106284037178750474606" className="icon google-plus"><i className="fab fa-google-plus"></i></a>
                             </li>
                         </ul>
                     </div>

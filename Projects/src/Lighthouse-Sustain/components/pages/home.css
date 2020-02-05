@@ -35,6 +35,12 @@ header {
     flex: 0 0 35%;
 }
 
+.error-message {
+  text-align: center;
+  font-size: 1.6rem;
+  color: rgb(231, 18, 18);
+  display: none;
+}
 
 /********* FILE UPLOAD ***********/
 .file-wrapper {
