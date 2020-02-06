@@ -14,7 +14,6 @@ class Dashboard extends Component {
 
     componentDidMount() {
         // this.props.match.params.subpage
-
         // add event listener on menu 
         const toggle = document.querySelector('.toggle');
 
@@ -118,6 +117,8 @@ class Dashboard extends Component {
     }
 
     render() {
+
+       
         return (
             <React.Fragment>
                 <div className="main-container">
@@ -156,20 +157,9 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 
-                <Switch>
-                    <Route
-                        exact path='/dashboard'
-                        component={() => <RequestTracker /> }
-                    />
-                    <Route
-                        exact path='/dashboard/:request'
-                        component={() => <Request /> }
-                    />
-                    <Route
-                        exact path='/dashboard/:consumption'
-                        component={() => <Consumption /> }
-                    />
-                </Switch>    
+            
+                <RequestTracker />
+
 
                 {/*<main className="main-content">
                     <div id="requestChart" style={{ width: '100%', height: '400px'}}></div>

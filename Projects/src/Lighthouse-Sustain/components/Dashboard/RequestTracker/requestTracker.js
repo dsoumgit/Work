@@ -9,11 +9,16 @@ class RequestTracker extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.data);  
+        
+        // call function to get request tracker 
+        this.requestTracker();
+        // Age Report 
+        this.ageRepor();
+    }
+
+    requestTracker = () => {
         // function for ticket monthly
         const data = this.props.data;
-        // direct to home page when going to directly to the path 
-         
         const createdResults = this.getCreatedTickets(data);
         const closedResults = this.getClosedTickets(data);
 
@@ -43,32 +48,12 @@ class RequestTracker extends Component {
                 lineWidth: 2
             }]
         }); 
+    }
 
-        Highcharts.chart('requestChart2', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: title.toUpperCase()
-            },
-            subtitle: {
-                text: 'Created vs Closed Tickets'
-            },
-            xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            },
-        
-            series: [{
-                name: 'Created Tickets',
-                data: createdResults,
-                lineWidth: 2
-            }, {
-                name: 'Closed Tickets',
-                data: closedResults,
-                lineWidth: 2
-            }]
-        }); 
-        
+    ageRepor = () => {
+        // function for ticket monthly
+        const data = this.props.data;
+        console.log(data);
     }
 
     getCreatedTickets = (data) => { 
