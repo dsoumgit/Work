@@ -1,4 +1,4 @@
-import { SET_POSTS } from '../_reducers/postsReducer';
+//import { SET_POSTS } from '../_reducers/postsReducer';
 
 export const getPosts = () => {
     return dispatch => {

@@ -1,17 +1,16 @@
 import React from "react";
 import { Switch, Route } from "react-router";
 import Home from "./pages/home";
-//import Posts from "./pages/Posts";
-import Dashboard from './Main/dashboard';
-import Request from './Request/request';
+import Dashboard from './Dashboard/dashboard';
+import NotFound from './pages/notfound';
 
 export default function App() {
   return (
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/dashboard" render={(props) => <Dashboard {...props} />} />
-        <Route path="/request" component={Request} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/*" component={NotFound} />
       </Switch>
     </div>
   );

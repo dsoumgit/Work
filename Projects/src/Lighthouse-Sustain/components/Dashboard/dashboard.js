@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import './dashboard.css';
 import logo from '../img/reveal-logo.png';
-import { Link } from 'react-router-dom';
+import { Switch, Link, Route } from 'react-router-dom';
+import { connect } from "react-redux";
+import RequestTracker from './RequestTracker/requestTracker';
+import Request from '../SustainmentRequest/request';
+import Consumption from '../Consumption/consumption';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -9,6 +13,8 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
+        // this.props.match.params.subpage
+
         // add event listener on menu 
         const toggle = document.querySelector('.toggle');
 
@@ -16,12 +22,18 @@ class Dashboard extends Component {
             // toggle class
             document.body.classList.toggle('menu-open');
         });
-
-
+        
         // get props 
-        const data = this.props.location.state; 
+        // const data = this.props.location.state; 
+        const {data} = this.props;
+        // check if user type url path directly 
+        if (data === undefined) {
+            // redirect to home 
+            return this.props.history.push('/');
+        } else {
+
         // function for ticket monthly
-        const createdResults = this.getCreatedTickets(data);
+        /*const createdResults = this.getCreatedTickets(data);
         const closedResults = this.getClosedTickets(data);
 
         const title = 'Sustainment Request Tracker';
@@ -49,7 +61,8 @@ class Dashboard extends Component {
                 data: closedResults,
                 lineWidth: 2
             }]
-        });
+            }); */
+        }
     }
 
     getCreatedTickets = (data) => { 
@@ -115,11 +128,11 @@ class Dashboard extends Component {
                         <ul>
                             <li>
                                 <span className="menu-item request"><i className="far fa-chart-bar"></i></span> 
-                                <a href="#" className="request-link">Open vs Closed Requests</a>
+                                <Link to='/dashboard/request' className="request-link">Open vs Closed Requests</Link>
                             </li>
                             <li>
                                 <span className="menu-item point"><i className="fa fa-braille"></i></span>
-                                <a href="" className="point-link">Points Consumption</a>
+                                <Link to='/dashboard/consumption' className="point-link">Points Consumption</Link>
                             </li>
                             <li>
                                 <span className="menu-item functional"><i className="fas fa-chart-area"></i></span>
@@ -143,12 +156,33 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 
-                <main className="main-content">
+                <Switch>
+                    <Route
+                        exact path='/dashboard'
+                        component={() => <RequestTracker /> }
+                    />
+                    <Route
+                        exact path='/dashboard/:request'
+                        component={() => <Request /> }
+                    />
+                    <Route
+                        exact path='/dashboard/:consumption'
+                        component={() => <Consumption /> }
+                    />
+                </Switch>    
+
+                {/*<main className="main-content">
                     <div id="requestChart" style={{ width: '100%', height: '400px'}}></div>
-                </main>
+        </main> */ }
             </React.Fragment>
         )
     }
 }
 
-export default Dashboard;
+const mapStateToProps = ({ 
+    data
+ }) => ({ 
+    data, // this.props.data
+ });
+
+export default connect(mapStateToProps)(Dashboard);

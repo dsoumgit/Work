@@ -5,6 +5,8 @@ import Papa from 'papaparse';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as postsActions from "../_actions/posts";
+import * as dataActions from "../_actions/data";
+import {Link} from 'react-router-dom';
 
 class Home extends Component {
     constructor(props) {
@@ -40,32 +42,32 @@ class Home extends Component {
     onUpload = () => {
         // get data from state 
         const data = this.state.data;
+        
         // check the result 
         if (data.length > 0) {
             // 1. get the first object in an array since they all have the same column names 
             const obj = data[0];
             // 2. check the column names to make sure they are valid 
-            for (let k in obj) {
-                // 3. specify the column names 
-                if (obj.hasOwnProperty('Number') && obj.hasOwnProperty('Ticket#') && obj.hasOwnProperty('Age') 
-                    && obj.hasOwnProperty('Title') && obj.hasOwnProperty('Created') && obj.hasOwnProperty('Changed')
-                    && obj.hasOwnProperty('Close Time') && obj.hasOwnProperty('Queue') && obj.hasOwnProperty('State') 
-                    && obj.hasOwnProperty('Priority') && obj.hasOwnProperty('Customer User') && obj.hasOwnProperty('CustomerID') 
-                    && obj.hasOwnProperty('Service') && obj.hasOwnProperty('SLA') && obj.hasOwnProperty('Type') 
-                    && obj.hasOwnProperty('FirstResponseInMin') && obj.hasOwnProperty('SolutionTime') && obj.hasOwnProperty('SolutionInMin') 
-                    && obj.hasOwnProperty('SolutionDiffInMin') && obj.hasOwnProperty('StateType') && obj.hasOwnProperty('Points') 
-                    && obj.hasOwnProperty('Functional Area') ) {
-                    
-                    // hide error message
-                    document.querySelector('.error-message').style.display = '';
-                    // navigate to the page and pass state as an argument 
-                    this.props.history.push('/dashboard', data);
-                } else {
-                    // invalid column names 
-                    document.querySelector('.error-message').style.display = 'block';
-                    // update the error message 
-                    { this.setState({errorMsg: 'Column names are not correct!'})};
-                }
+            if (obj.hasOwnProperty('Number') && obj.hasOwnProperty('Ticket#') && obj.hasOwnProperty('Age') 
+                && obj.hasOwnProperty('Title') && obj.hasOwnProperty('Created') && obj.hasOwnProperty('Changed')
+                && obj.hasOwnProperty('Close Time') && obj.hasOwnProperty('Queue') && obj.hasOwnProperty('State') 
+                && obj.hasOwnProperty('Priority') && obj.hasOwnProperty('Customer User') && obj.hasOwnProperty('CustomerID') 
+                && obj.hasOwnProperty('Service') && obj.hasOwnProperty('SLA') && obj.hasOwnProperty('Type') 
+                && obj.hasOwnProperty('FirstResponseInMin') && obj.hasOwnProperty('SolutionTime') && obj.hasOwnProperty('SolutionInMin') 
+                && obj.hasOwnProperty('SolutionDiffInMin') && obj.hasOwnProperty('StateType') && obj.hasOwnProperty('Points') 
+                && obj.hasOwnProperty('Functional Area') ) {
+                // hide error message
+                document.querySelector('.error-message').style.display = '';
+                
+                // store data in action  
+                this.props.dataActions.setData(data);
+                // navigate to the page and pass state as an argument 
+                this.props.history.push('/dashboard');
+            } else {
+                // invalid column names 
+                document.querySelector('.error-message').style.display = 'block';
+                // update the error message 
+                { this.setState({errorMsg: 'Column names are not correct!'})};
             }
 
             
@@ -91,7 +93,7 @@ class Home extends Component {
             <div className="container">
                 <header>
                     <div className="company-logo">
-                        <img src={logo} alt="Reveal Logo" />
+                        <img src={logo} alt="Reveal Logo" className="logo-img" />
                     </div>
                     <div className="company-name">
                         <h1 className="heading-1">Lighthouse Sustainment</h1>
@@ -126,10 +128,18 @@ class Home extends Component {
                     <div className="social-icons">
                         <ul>
                             <li>
-                                <a href="https://www.facebook.com/RevealValue/" className="icon facebook"><i className="fab fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/RevealValue/" className="icon facebook"><i className="fab fa-facebook"></i></a>               
+                            </li>
+                            <li>
                                 <a href="https://twitter.com/revealusa" className="icon twitter"><i className="fab fa-twitter"></i></a>
+                            </li>
+                            <li>
                                 <a href="https://www.linkedin.com/company/reveal-usa-inc/" className="icon linkedin"><i className="fab fa-linkedin"></i></a>
+                            </li>
+                            <li>
                                 <a href="https://www.youtube.com/user/RevealValueUSA" className="icon youtube"><i className="fab fa-youtube"></i></a>
+                            </li>
+                            <li>
                                 <a href="https://plus.google.com/106284037178750474606" className="icon google-plus"><i className="fab fa-google-plus"></i></a>
                             </li>
                         </ul>
@@ -145,10 +155,21 @@ class Home extends Component {
     
 }
 
-const mapStateToProps = ({ posts }) => ({ posts });
+const mapStateToProps = ({ 
+    data
+ }) => ({ 
+    uploadedData: data, // this.props.uploadedData
+ });
+
+
+// function mapDispatchToPropsExplained(reduxState){
+//     return {
+//         data: reduxState.data
+//     }
+// }
 const mapDispatchToProps = dispatch => (
     {
-        postsActions: bindActionCreators(postsActions, dispatch)
+        dataActions: bindActionCreators(dataActions, dispatch), // this.props.dataActions.setData(data)
     }
 ); 
 
