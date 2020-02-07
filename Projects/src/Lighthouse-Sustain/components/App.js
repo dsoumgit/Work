@@ -4,7 +4,7 @@ import Home from "./pages/home";
 import Dashboard from './Dashboard/dashboard';
 import NotFound from './pages/notfound';
 import Request from './SustainmentRequest/request';
-import Consumption from './Consumption/consumption';
+import Consumption from './Point-consumption/pointConsumption';
 
 const CONTENT = {
   request: 'This is the first page',
@@ -16,9 +16,7 @@ export default function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/dashboard/:consumption" component={Consumption} />
-        <Route exact path="/dashboard/:request" component={Request} />
-        <Route exact path="/dashboard" render={() => <Dashboard content={CONTENT} />} />
+        <Route path="/dashboard" component={Dashboard} />
         <Route path="/*" component={NotFound} />
       </Switch>
     </div>

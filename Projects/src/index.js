@@ -47,14 +47,62 @@ import reducers from './Blog/reducers/reducers';
 import Main from './Lighthouse-Sustain/components/Main';
 
 const App = () => {
-    
-    return(    
+
+    return(
         <Main />
     )
 }
+
 
 ReactDOM.render(
     <App />,
     document.getElementById('root')
 )
 
+
+//import { BrowserRouter as Router, Route, Link, Switch }  from 'react-router-dom'; 
+//import Consumption from './Lighthouse-Sustain/components/Consumption/consumption';
+
+/*
+const topics = [
+    {
+        name: 'Request Tickets',
+        id: 'request',
+        description: 'Loream description...',
+        resources: [
+            {
+                name: 'URL Parameter',
+                id: 'url-parameters',
+                description: 'URL parameters are ...',
+                url: 'http://www.google.com'
+            },
+            {
+                name: 'React is the best',
+                id: 'react',
+                description: 'When there is ...',
+                url: 'http://www.google.com'
+            }
+        ]
+    },
+    {
+        name: 'Point Consumption',
+        id: 'point-consumption',
+        description: 'Loream description...',
+        resources: [
+            {
+                name: 'URL Parameter',
+                id: 'url-parameters',
+                description: 'URL parameters are ...',
+                url: 'http://www.google.com'
+            },
+            {
+                name: 'React is the best',
+                id: 'react',
+                description: 'When there is ...',
+                url: 'http://www.google.com'
+            }
+        ]
+    }
+
+];
+*/

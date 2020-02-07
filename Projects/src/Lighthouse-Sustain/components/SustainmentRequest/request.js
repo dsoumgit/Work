@@ -3,7 +3,7 @@ import React from 'react';
 const Request = () => {
 
     return(
-        <div>Request...</div>
+        <div>Request content...</div>
     )
 }
 

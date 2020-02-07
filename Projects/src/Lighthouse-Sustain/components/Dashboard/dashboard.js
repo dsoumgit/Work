@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import './dashboard.css';
 import logo from '../img/reveal-logo.png';
-import { Switch, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 import { connect } from "react-redux";
 import RequestTracker from './RequestTracker/requestTracker';
 import Request from '../SustainmentRequest/request';
-import Consumption from '../Consumption/consumption';
+import PointConsumption from '../Point-consumption/pointConsumption';
+import FunctionalArea from '../Functional/functionalArea';
+import ContactUs from '../ContactUs/contactUs';
+
+const MainDash = () => (
+    <RequestTracker />
+);
 
 class Dashboard extends Component {
     constructor(props) {
@@ -30,39 +36,12 @@ class Dashboard extends Component {
             // redirect to home 
             return this.props.history.push('/');
         } else {
-
-        // function for ticket monthly
-        /*const createdResults = this.getCreatedTickets(data);
-        const closedResults = this.getClosedTickets(data);
-
-        const title = 'Sustainment Request Tracker';
-
-        Highcharts.chart('requestChart', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: title.toUpperCase()
-            },
-            subtitle: {
-                text: 'Created vs Closed Tickets'
-            },
-            xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            },
-        
-            series: [{
-                name: 'Created Tickets',
-                data: createdResults,
-                lineWidth: 2
-            }, {
-                name: 'Closed Tickets',
-                data: closedResults,
-                lineWidth: 2
-            }]
-            }); */
+            // direct to 'main page'
+            return this.props.history.push('/dashboard/home');
         }
     }
+
+    
 
     getCreatedTickets = (data) => { 
         // copy an array 
@@ -117,8 +96,6 @@ class Dashboard extends Component {
     }
 
     render() {
-
-       
         return (
             <React.Fragment>
                 <div className="main-container">
@@ -129,21 +106,26 @@ class Dashboard extends Component {
                         <ul>
                             <li>
                                 <span className="menu-item request"><i className="far fa-chart-bar"></i></span> 
-                                <Link to='/dashboard/request' className="request-link">Open vs Closed Requests</Link>
+                                <Link to='/dashboard/home' className="request-link">Home</Link>
+                            </li>
+                            <li>
+                                <span className="menu-item request"><i className="far fa-chart-bar"></i></span> 
+                                <Link to='/dashboard/request-tracker' className="request-link">Open vs Closed Requests</Link>
                             </li>
                             <li>
                                 <span className="menu-item point"><i className="fa fa-braille"></i></span>
-                                <Link to='/dashboard/consumption' className="point-link">Points Consumption</Link>
+                                <Link to='/dashboard/point-consumption' className="point-link">Points Consumption</Link>
                             </li>
                             <li>
                                 <span className="menu-item functional"><i className="fas fa-chart-area"></i></span>
-                                <a href="#" className="functional-link">Functional Area</a>
+                                <Link to='/dashboard/functional-area' className="functional-link">Functional Area</Link>
                             </li>
                             <li>
                                 <span className="menu-item contact"><i className="fa fa-envelope"></i></span>
-                                <a href="#" className="contact-link">Contact Us</a>
+                                <Link to='/dashboard/contact-us' className="contact-link">Contact Us</Link>
                             </li>
-                        </ul>
+                        </ul> 
+                            
                     </nav>
 
                     <div className="main-header">
@@ -157,13 +139,14 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 
-            
-                <RequestTracker />
-
-
-                {/*<main className="main-content">
-                    <div id="requestChart" style={{ width: '100%', height: '400px'}}></div>
-        </main> */ }
+                <Switch>
+                    <Route exact path="/dashboard/contact-us" component={ContactUs} />
+                    <Route exact path="/dashboard/functional-area" component={FunctionalArea} />
+                    <Route exact path="/dashboard/request-tracker" component={Request} />
+                    <Route exact path="/dashboard/point-consumption" component={PointConsumption} />
+                    <Route exact path="/dashboard/home" component={MainDash} /> 
+                </Switch>
+                    
             </React.Fragment>
         )
     }

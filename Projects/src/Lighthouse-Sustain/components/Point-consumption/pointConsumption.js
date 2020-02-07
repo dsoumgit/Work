@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Consumption = () => {
+const PointConsumption = () => {
 
     return(
         <div>Consumption...</div>
     )
 }
 
-export default Consumption;
+export default PointConsumption;
