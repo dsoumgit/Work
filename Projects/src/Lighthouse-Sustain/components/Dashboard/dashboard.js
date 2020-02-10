@@ -3,14 +3,18 @@ import './dashboard.css';
 import logo from '../img/reveal-logo.png';
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 import { connect } from "react-redux";
-import RequestTracker from './RequestTracker/requestTracker';
-import Request from '../SustainmentRequest/request';
+import MainContent from '../Dashboard/Main/mainContent';
+//import Request from '../SustainmentRequest/request';
+import SustainRequest from './Pages/SustainRequest/sustainRequest'
 import PointConsumption from '../Point-consumption/pointConsumption';
 import FunctionalArea from '../Functional/functionalArea';
 import ContactUs from '../ContactUs/contactUs';
+import NotFound from '../pages/notfound';
 
 const MainDash = () => (
-    <RequestTracker />
+    <div className="">
+        <MainContent />
+    </div>
 );
 
 class Dashboard extends Component {
@@ -28,9 +32,8 @@ class Dashboard extends Component {
             document.body.classList.toggle('menu-open');
         });
         
-        // get props 
-        // const data = this.props.location.state; 
-        const {data} = this.props;
+        // get props from store in redux 
+        const { data } = this.props;
         // check if user type url path directly 
         if (data === undefined) {
             // redirect to home 
@@ -39,60 +42,6 @@ class Dashboard extends Component {
             // direct to 'main page'
             return this.props.history.push('/dashboard/home');
         }
-    }
-
-    
-
-    getCreatedTickets = (data) => { 
-        // copy an array 
-        const arr = data.slice(); 
-        // define count to store key value pairs 
-        const count = {};
-        
-        arr.filter(item => new Date(item.Created).getFullYear() === 2018)
-            .map(cur => {
-                // convert to date object 
-                let createdMonth = new Date(cur.Created).getMonth();
-                // month start from 1 
-                if (createdMonth < 12) {
-                    createdMonth += 1;
-                }
-                // return result of all the months 
-                return createdMonth;
-            })
-            .forEach(elem => {
-                count[elem] = (count[elem] || 0) + 1;
-            });
-
-        const output = new Array(12).fill(0).map((cur, ind) => count[ind + 1] || cur);
-
-        return output; 
-    }
-
-    getClosedTickets = (data) => { 
-        // copy an array 
-        const arr = data.slice(); 
-        // define count to store key value pairs 
-        const count = {};
-        
-        arr.filter(item => new Date(item['Close Time']).getFullYear() === 2018)
-            .map(cur => {
-                // convert to date object 
-                let month = new Date(cur['Close Time']).getMonth();
-                // month start from 1 
-                if (month < 12) {
-                    month += 1;
-                }
-                // return result of all the months 
-                return month;
-            })
-            .forEach(elem => {
-                count[elem] = (count[elem] || 0) + 1;
-            });
-
-        const output = new Array(12).fill(0).map((cur, ind) => count[ind + 1] || cur);
-
-        return output; 
     }
 
     render() {
@@ -105,12 +54,12 @@ class Dashboard extends Component {
                         </div>
                         <ul>
                             <li>
-                                <span className="menu-item request"><i className="far fa-chart-bar"></i></span> 
-                                <Link to='/dashboard/home' className="request-link">Home</Link>
+                                <span className="menu-item main"><i className="fas fa-industry"></i></span> 
+                                <Link to='/dashboard/home' className="main-link">Main Dashboard</Link>
                             </li>
                             <li>
                                 <span className="menu-item request"><i className="far fa-chart-bar"></i></span> 
-                                <Link to='/dashboard/request-tracker' className="request-link">Open vs Closed Requests</Link>
+                                <Link to='/dashboard/sustainment-request' className="request-link">Open vs Closed Requests</Link>
                             </li>
                             <li>
                                 <span className="menu-item point"><i className="fa fa-braille"></i></span>
@@ -142,11 +91,11 @@ class Dashboard extends Component {
                 <Switch>
                     <Route exact path="/dashboard/contact-us" component={ContactUs} />
                     <Route exact path="/dashboard/functional-area" component={FunctionalArea} />
-                    <Route exact path="/dashboard/request-tracker" component={Request} />
+                    <Route exact path="/dashboard/sustainment-request" component={SustainRequest} />
                     <Route exact path="/dashboard/point-consumption" component={PointConsumption} />
                     <Route exact path="/dashboard/home" component={MainDash} /> 
+                    <Route path="/*" component={NotFound} />
                 </Switch>
-                    
             </React.Fragment>
         )
     }

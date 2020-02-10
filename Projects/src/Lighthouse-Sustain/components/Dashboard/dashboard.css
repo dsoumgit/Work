@@ -16,13 +16,13 @@
     top: 0;
     left: 0; 
     width: 200px; 
-    height: 100vh;
+    height: 100%;
     z-index: 0;
     transform: translateX(-100%); /* off the screen */
 }
 
 .nav-menu .site-logo {
-    padding: 3rem 0;
+    padding: 2rem 0;
     text-align: center;
 }
 
@@ -31,6 +31,7 @@
 }
 
 .nav-menu ul {
+    background-color: #000;
     padding: 0;
     list-style-type: none;
     margin: 0;
@@ -61,6 +62,11 @@
     color: rgb(6, 226, 17);
     font-size: 1.6rem;
     margin-bottom: 10px;
+}
+
+.main, 
+.main-link {
+    color: #fff;
 }
 
 .request,

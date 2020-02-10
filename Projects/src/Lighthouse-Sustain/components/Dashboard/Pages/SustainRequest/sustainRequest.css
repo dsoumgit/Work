@@ -1,0 +1,27 @@
+.sustainment-page {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .request-heading {
+     font-size: 1.3rem;	
+  }
+  
+  .request-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(211, 211, 211, 0.322);
+    padding: 1rem;
+  }
+  
+  .request-select select {
+     border: 0;
+     width: 220px;
+     height: 40px; 
+     font-size: .9rem;
+     font-weight: 600;
+     text-indent: 10px;
+     background-color: coral;
+  }

@@ -279,8 +279,12 @@ footer {
 .footer {
     padding: 10px;
     text-align: center;
-    color: rgba(247, 243, 243, .5); 
+    color: rgb(226, 223, 223); 
     font-size: .8rem;
+}
+
+.footer p {
+  color: rgba(226, 223, 223, .6);
 }
 
 /******** MEDIA QUERIES ************/

@@ -1,0 +1,6 @@
+.sla-container {
+    margin: 5rem 3rem; 
+
+    display: flex;
+    justify-content: space-evenly;
+}
