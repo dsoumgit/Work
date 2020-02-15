@@ -1,50 +1,27 @@
 import React, { Component } from 'react';
 import './requestTracker.css';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 
 class RequestTracker extends Component {
     constructor(props) {    
         super(props);
-        this.state = {
-            data: {
-                title: 'Sustainment Request Tracker',
-                subtitle: 'Created vs Closed Tickets',
-                type: 'column',
-                createdSeriesName: 'Created Tickets',
-                closedSeriesName: 'Closed Tickets',
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            },
-            createdData: [],
-            closedData: []
-        }
     }
 
     componentDidMount() {
-        // call function to get request tracker 
-        this.requestTracker();
-    }
-
-    requestTracker = () => {
+        console.log(this.props.data);  
         // function for ticket monthly
         const data = this.props.data;
-        const createdMonthly = this.getCreatedMonthly(data);
-        const closedMonthly = this.getClosedMonthly(data);
+        // direct to home page when going to directly to the path 
+         
+        const createdResults = this.getCreatedTickets(data);
+        const closedResults = this.getClosedTickets(data);
 
         const title = 'Sustainment Request Tracker';
 
         Highcharts.chart('requestChart', {
             chart: {
-                plotBackgroundColor: true,
-                plotBorderWidth: false,
-                plotShadow: false,
-                type: 'column',
-                // options3d: {
-                //     enabled: true,
-                //     alpha: 15,
-                //     beta: 15,
-                //     depth: 50,
-                //     viewDistance: 25
-                // }
+                type: 'column'
             },
             title: {
                 text: title.toUpperCase()
@@ -55,28 +32,20 @@ class RequestTracker extends Component {
             xAxis: {
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
             },
-            credits: {
-                enabled: false
-            },
+        
             series: [{
                 name: 'Created Tickets',
-                data: createdMonthly,
+                data: createdResults,
                 lineWidth: 2
             }, {
                 name: 'Closed Tickets',
-                data: closedMonthly,
+                data: closedResults,
                 lineWidth: 2
             }]
         }); 
-
-        // copy both results to 'data'
-    //    const newArr = {...this.state.data, createdData: createdResults, closedData: closedResults };
-    //    console.log(newArr);
-        // update state 
-    //    this.setState({ data: newArr });
     }
 
-    getCreatedMonthly = (data) => { 
+    getCreatedTickets = (data) => { 
         // copy an array 
         const arr = data.slice(); 
         // define count to store key value pairs 
@@ -102,7 +71,7 @@ class RequestTracker extends Component {
         return output; 
     }
 
-    getClosedMonthly = (data) => { 
+    getClosedTickets = (data) => { 
         // copy an array 
         const arr = data.slice(); 
         // define count to store key value pairs 
@@ -129,14 +98,12 @@ class RequestTracker extends Component {
     }
 
     render() {
-
         return(
             <React.Fragment>
                 <main className="main-content">
-                    <div id="requestChart" style={{ width: '100%', height: '400px'}}></div> 
+                    <div id="requestChart" style={{ width: '100%', height: '400px'}}></div>
                 </main>
-
-                {/* <Highchart props={this.state.data} /> */}
+                
             </React.Fragment>
         )
     }

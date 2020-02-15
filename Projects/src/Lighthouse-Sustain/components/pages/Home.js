@@ -4,9 +4,7 @@ import logo from '../img/reveal-logo-1.png';
 import Papa from 'papaparse';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as postsActions from "../_actions/posts";
 import * as dataActions from "../_actions/data";
-import {Link} from 'react-router-dom';
 
 class Home extends Component {
     constructor(props) {
@@ -78,14 +76,10 @@ class Home extends Component {
         }
     }
 
-    getPosts = () => {
+    /*getPosts = () => {
         this.props.postsActions.getPosts();
         this.props.history.push("/posts");
-
-    //    this.props.dataActions.getData();
-
-    //    this.props.storeSomething.getPosts();
-    }
+    }*/
 
     render() {
 

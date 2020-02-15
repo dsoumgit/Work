@@ -55,38 +55,22 @@ header {
 
 /********* FILE UPLOAD ***********/
 .file-wrapper {
-  margin: 5rem auto; 
-  animation: all .4s ease-in-out;
-  animation-name: slideDown;
-  animation-delay: .4s;
-  animation-timing-function: linear;
+  margin: 5rem auto;  
 }
 
-@keyframes slideDown {
-  0% {
-      opacity: 0;
-      transform: translateY(-20%);
-  }
+.image-upload-wrap {
+  animation: fadeIn ease-in 5s;
+  -webkit-animation: fadeIn ease-in 5s;
+  -moz-animation: fadeIn ease-in 5s;
+  -o-animation: fadeIn ease-in 5s;
+  -ms-animation: fadeIn ease-in 5s;
+  transition: all .2s;
+}
 
-  20% { 
-      opacity: 0;
-      transform: translateY(-30%); 
-  }
-
-  50% { 
-      opacity: 0;
-      transform: translateY(-50%); 
-  }
-
-  80% { 
-      opacity: 0;
-      transform: translateY(-80%); 
-  }
-
-  100% { 
-      opacity: 1;
-      transform: translateY(1); 
-  };
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(.6);}
+  50% { opacity: .8; transform: scale(.9); }
+  100% { opacity: 1; transform: scale(1);}
 }
 
 .file-upload {
@@ -207,7 +191,21 @@ header {
 .submit {
   margin-top: 20px;
   text-align: center;
+  animation: slideInLeft ease-in 5s;
+  -webkit-animation: slideInLeft ease-in 5s;
+  -moz-animation: slideInLeft ease-in 5s;
+  -o-animation: slideInLeft ease-in 5s;
+  -ms-animation: slideInLeft ease-in 5s;
+  transition: all .2s;
 }
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+}
+
 
 .btn-submit {
   padding: 15px; 

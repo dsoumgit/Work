@@ -3,17 +3,24 @@ import './dashboard.css';
 import logo from '../img/reveal-logo.png';
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 import { connect } from "react-redux";
-import MainContent from '../Dashboard/Main/mainContent';
-//import Request from '../SustainmentRequest/request';
-import SustainRequest from './Pages/SustainRequest/sustainRequest'
-import PointConsumption from '../Point-consumption/pointConsumption';
-import FunctionalArea from '../Functional/functionalArea';
-import ContactUs from '../ContactUs/contactUs';
-import NotFound from '../pages/notfound';
+//import MainContent from '../Dashboard/Main/mainContent';
+import RequestTracker from './Main/requestTracker';
+import PointsTracker from './Main/pointsTracker';
+//import SLATracker from './Main/slaTracker';
+import AgingReport from './Main/agingReport';
+import SustainRequest from './SustainRequest/sustainRequest';
+import PointConsumption from './PointConsumption/pointConsumption';
+import FunctionalArea from './FunctionalArea/functionalArea';
+import ContactUs from './ContactUs/contactUs';
+import NotFound from './notfound';
 
 const MainDash = () => (
     <div className="">
-        <MainContent />
+        {/* <MainContent /> */}
+        <RequestTracker />
+        <AgingReport />
+        {/* <SLATracker /> */}
+        <PointsTracker />
     </div>
 );
 
