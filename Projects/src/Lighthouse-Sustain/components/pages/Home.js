@@ -40,7 +40,6 @@ class Home extends Component {
     onUpload = () => {
         // get data from state 
         const data = this.state.data;
-        
         // check the result 
         if (data.length > 0) {
             // 1. get the first object in an array since they all have the same column names 
@@ -64,23 +63,22 @@ class Home extends Component {
             } else {
                 // invalid column names 
                 document.querySelector('.error-message').style.display = 'block';
+                // hide message 
+                document.querySelector('.file-upload-content').style.display = 'none';
+                // show input 
+                document.querySelector('.image-upload-wrap').style.display = 'block';
                 // update the error message 
-                { this.setState({errorMsg: 'Column names are not correct!'})};
+                { this.setState({errorMsg: 'Invalid fields!', data: [] })};
             }
 
             
         } else {
             document.querySelector('.error-message').style.display = 'block';
             // update the error message 
-            { this.setState({errorMsg: 'File Not Found!'})};
+            { this.setState({errorMsg: 'File is not found!'})};
         }
     }
-
-    /*getPosts = () => {
-        this.props.postsActions.getPosts();
-        this.props.history.push("/posts");
-    }*/
-
+    
     render() {
 
         return(

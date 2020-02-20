@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import './pointsTracker.css';
 import { connect } from 'react-redux';
+//import HighchartComp from '../_highchart/highchartComp';
 
 class PointsTracker extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            /*isEmpty: false,
+            chartId: 'pointsTrackerChart',
+            PointTracker: {
+                chartId: 'pointsTrackerChart',
+                title: 'Points Tracker',
+                subTitle: new Date().getFullYear() - 2,
+                innovation: [],
+                closedRequest: []
+            } */
+        }
     }
 
     componentDidMount() {
@@ -61,6 +73,7 @@ class PointsTracker extends Component {
             obj.ClosedRequests = totalInno; 
         }
         
+    
         // month array 
         const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
             
@@ -92,13 +105,13 @@ class PointsTracker extends Component {
                 data: [obj.ClosedRequests],
                 lineWidth: 2
             }]
-        }); 
+        });
     }
 
     render() {
         return(
             <div className="points-container">
-                <div id="pointsTrackerChart" style={{ width: '100%', height: '400px'}}></div>
+                <div id="pointsTrackerChart" style={{ width: '100%', height: '400px'}}></div> 
             </div>
         )
     }

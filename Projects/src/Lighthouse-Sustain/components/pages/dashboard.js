@@ -3,10 +3,9 @@ import './dashboard.css';
 import logo from '../img/reveal-logo.png';
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
 import { connect } from "react-redux";
-//import MainContent from '../Dashboard/Main/mainContent';
 import RequestTracker from './Main/requestTracker';
 import PointsTracker from './Main/pointsTracker';
-//import SLATracker from './Main/slaTracker';
+import SLATracker from './Main/slaTracker';
 import AgingReport from './Main/agingReport';
 import SustainRequest from './SustainRequest/sustainRequest';
 import PointConsumption from './PointConsumption/pointConsumption';
@@ -19,7 +18,7 @@ const MainDash = () => (
         {/* <MainContent /> */}
         <RequestTracker />
         <AgingReport />
-        {/* <SLATracker /> */}
+        <SLATracker /> 
         <PointsTracker />
     </div>
 );
