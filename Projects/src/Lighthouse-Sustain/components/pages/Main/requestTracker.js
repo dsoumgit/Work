@@ -9,33 +9,21 @@ class RequestTracker extends Component {
 
         this.state = {
             isEmpty: false
-            /*chartId: 'requestChart',
-            RequestTracker: {
-                chartId: 'requestChart',
-                title: 'Sustainment Request Tracker',
-                createdResults: [],
-                closedResults: []
-            }*/
         }
     }
 
     componentDidMount() {
         // function for ticket monthly
         const data = this.props.data;
-         
-    //    const createdResults = getCreatedTickets(data);
-    //    const closedResults = getClosedTickets(data);
         
-        // get number of created tickets for the last three years 
-    //    const createdResults = getCreatedLastThreeYears(data);
-    //    console.log(createdResults);
+        let title = 'Sustainment Request Tracker';
 
         Highcharts.chart('requestChart', {
             chart: {
                 type: 'column'
             },
             title: {
-                text: 'Sustainment Request Tracker'
+                text: title.toUpperCase()
             },
             subtitle: {
                 text: 'Created vs Closed Tickets' 

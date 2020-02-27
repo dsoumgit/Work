@@ -75,7 +75,6 @@ export const getTotalYears = (data) => {
             createdResults.push(createdYear);
         }
     });
-    console.log(createdResults);
 
     /**** Close Tickets  */
     // define a result 
@@ -94,7 +93,7 @@ export const getTotalYears = (data) => {
             closedResults.push(closeTime);
         }
     });
-    console.log(closedResults);
+
     // check both length 
     if (createdResults.length > closedResults.length) {
         return createdResults;
