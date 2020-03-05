@@ -22,7 +22,6 @@ class SustainRequest extends Component {
     }
 
     setSustainRequest(selectedVal) {
-        console.log(selectedVal);
         // get props 
         const { data } = this.props.data; 
         
@@ -106,7 +105,7 @@ class SustainRequest extends Component {
                             <option value="Yearly">Yearly</option>
                             <option value="Quarterly">Quarterly</option>
                             <option value="Monthly">Monthly</option>
-                            <option value="Weekly">Weekly</option>
+                            {/* <option value="Weekly">Weekly</option> */}
                         </select>
                     </div>
                 </div>

@@ -48,13 +48,11 @@ export const getClosedLastThreeYears = (data) => {
         }
       });
   
-      console.log(closed);
       let closedResults = [];
       for (let c in closed) {
         closedResults.push(closed[c]);
       }
   
-      console.log(closedResults); 
       return closedResults;
 }
 
@@ -224,3 +222,5 @@ export const getClosedQuarterly = (data) => {
 
     return output;
 }
+
+// Get weekly data 
