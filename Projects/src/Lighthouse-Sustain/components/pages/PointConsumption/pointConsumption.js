@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import './pointConsumption.css'; 
 import { connect } from 'react-redux';
 import { 
     getCreatedQuarterly, getClosedQuarterly, getCreatedTickets, getClosedTickets, 
     getCreatedLastThreeYears, getClosedLastThreeYears, getTotalYears
-} from '../_helperFunc/helperFunc';
+} from '../_globalFunc/globalFunc';
 
 class PointConsumption extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            value: 'Yearly',
+            value: 'Quarterly',
             
         };
     }
@@ -28,18 +29,7 @@ class PointConsumption extends Component {
         // define variables 
         let categories = [], series = []; 
 
-        if (selectedVal === 'Yearly') {
-            categories = getTotalYears(data)
-            series = [{
-                name: 'Created Tickets',
-                data: getCreatedLastThreeYears(data),
-                lineWidth: 2
-            }, {
-                name: 'Closed Tickets',
-                data: getClosedLastThreeYears(data),
-                lineWidth: 2
-            }]
-        } else if (selectedVal === 'Quarterly') {
+        if (selectedVal === 'Quarterly') {
             categories = ['Q1', 'Q2', 'Q3', 'Q4'];
             series = [{
                 name: 'Created Tickets',
@@ -101,7 +91,6 @@ class PointConsumption extends Component {
                 <div className="consumption-heading">Overview of Open vs Closed</div>
                     <div className="consumption-select">
                         <select id='select' onChange={this.handleChange} value={this.state.value}>
-                            <option value="Yearly">Yearly</option>
                             <option value="Quarterly">Quarterly</option>
                             <option value="Monthly">Monthly</option>
                             {/* <option value="Weekly">Weekly</option> */}

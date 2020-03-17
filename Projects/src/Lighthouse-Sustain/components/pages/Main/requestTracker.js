@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './requestTracker.css';
 import { connect } from 'react-redux';
-import { getCreatedLastThreeYears, getClosedLastThreeYears, getTotalYears } from '../_helperFunc/helperFunc';
+import { getCreatedLastThreeYears, getClosedLastThreeYears, getTotalYears } from '../_globalFunc/globalFunc';
 
 class RequestTracker extends Component {
     constructor(props) {    

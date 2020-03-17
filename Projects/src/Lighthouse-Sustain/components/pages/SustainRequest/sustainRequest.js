@@ -4,15 +4,14 @@ import { connect } from 'react-redux';
 import { 
     getCreatedQuarterly, getClosedQuarterly, getCreatedTickets, getClosedTickets, 
     getCreatedLastThreeYears, getClosedLastThreeYears, getTotalYears
-} from '../_helperFunc/helperFunc';
+} from '../_globalFunc/globalFunc';
 
 
 class SustainRequest extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 'Yearly',
-            
+            value: 'Yearly'
         };
     }
 
