@@ -14,8 +14,8 @@ export const elements = {
     resNextPage: document.querySelector('.results__btn--next')
 }
 
-// create a variable loader so we it is easy to be reusable 
-const loaderElem = {
+// create a variable loader so it is easy to be reusable 
+export const loaderStr = {
     loader: 'loader'
 }
 
@@ -23,7 +23,7 @@ const loaderElem = {
 export const renderLoader = parent => {
     // loader class from CSS 
     const loader = `
-            <div class='${loaderElem.loader}'>
+            <div class='${loaderStr.loader}'>
                 <svg>
                     <use href='img/icons.svg#icon-cw'></use>
                 </svg>
@@ -37,7 +37,7 @@ export const renderLoader = parent => {
 // clear the loader 
 export const clearLoader = () => {
     // get loader class
-    const loader = document.querySelector(`.${loaderElem.loader}`); 
+    const loader = document.querySelector(`.${loaderStr.loader}`); 
     // move up to the parent element then remove the child
     if (loader) loader.parentElement.removeChild(loader); 
 }

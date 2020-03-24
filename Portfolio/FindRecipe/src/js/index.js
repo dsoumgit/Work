@@ -25,14 +25,14 @@ import { elements, renderLoader, clearLoader } from './views/base';
 const state = {};
 
 // a function to control the search
-                // use async/await 
+// use async/await 
 const controlSearch = async () => {
     // 1. get query 
     const query = searchView.getInput();
     // check if there is any query 
     if (query) {
         // 2. Store it in a state
-        state.search = new Search(query);  
+        state.search = new Search(query);
         // clear the search 
         searchView.clearInput();
         // clear list item 
@@ -54,8 +54,17 @@ elements.searchForm.addEventListener('submit', evt => {
     evt.preventDefault();
 
     // call function 
-    controlSearch(); 
+    controlSearch();
 });
 
- 
- //search.getResults(); 
+elements.resultsPage.addEventListener('click', e => {
+    console.log(e.target);
+    const btn = e.target.closest('.btn-inline');
+    if (btn) {
+        const goToPage = parseInt(btn.dataset.goto, 10);
+        // clear list item 
+        searchView.clearResults();
+        searchView.renderList(state.search.result, goToPage);
+        console.log(goToPage);
+    }
+});
