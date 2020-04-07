@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dara | Personal Site</title>
+    <meta name="description" content="This site is all about me as well as work experiences.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- <div id="content">
+        <h2>This is our page title</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div> -->
+
+    
+
+    <div class="container">
+        <div class="background-image"></div>
+        <!-- Loader -->
+        <div class="loader" id="loader">
+            <div class="cssload-box-loading"></div>
+        </div> 
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-10 mt-5">
+                <a href="" class="header1">Dara Soumgit</a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-2 mt-5">
+                <div class="d-flex justify-content-around" id="social-icon">
+                    <div class="p-2 bd-highlight">
+                        <a href="www.google.com" target="_blank">
+                            <i class="fa fa-3x fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <a href="www.google.com" target="_blank">
+                            <i class="fa fa-3x fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <a href="www.google.com" target="_blank">
+                            <i class="fa fa-3x fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <div class="hexagon hex1">
+                <div class="overlay">
+                    <div class="text">About</div>
+                </div>
+            </div>
+            <div class="hexagon hex2">
+                <div class="overlay">
+                    <div class="text">Work</div>
+                </div>
+            </div>
+            <div class="hexagon hex3">
+                <div class="overlay">
+                    <div class="text">Portfolio</div>
+                </div>
+            </div>
+            <div class="hexagon hex4">
+                <div class="overlay">
+                    <div class="text">Blog</div>
+                </div>
+            </div>
+            <div class="hexagon hex5">
+                <div class="overlay">
+                    <div class="text">Resource</div>
+                </div>
+            </div>
+            <div class="hexagon hex6">
+                <div class="overlay">
+                    <div class="text">Contact Me</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="p-4 footer-text">
+            Copyright &copy; 2020 by Dara Soumgit. All right reserved.
+        </div>
+    </footer>
+
+    <script>
+        function ready() {
+            console.log('DOM is ready');
+            // hide loader after 4 sec
+            var loader = document.querySelector('.cssload-box-loading');
+
+            setTimeout(function () {
+                loader.style.display = 'none';
+
+                document.querySelector('.header1').style.opacity = 1;
+                document.querySelector('#social-icon').style.opacity = 1;
+
+                document.querySelector('.main-content').style.opacity = 1;
+            }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', ready);
+    </script>
+</body>
+
+</html>
