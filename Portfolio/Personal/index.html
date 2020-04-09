@@ -27,17 +27,18 @@
         <p>Lorem ipsum dolor sit amet.</p>
     </div> -->
 
-    
+
 
     <div class="container">
         <div class="background-image"></div>
         <!-- Loader -->
         <div class="loader" id="loader">
             <div class="cssload-box-loading"></div>
-        </div> 
+        </div>
+
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-10 mt-5">
-                <a href="" class="header1">Dara Soumgit</a>
+                <div class="logo-header">Dara Soumgit</div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-2 mt-5">
                 <div class="d-flex justify-content-around" id="social-icon">
@@ -59,18 +60,24 @@
                 </div>
             </div>
         </div>
+
+        <div id="about">
+            <h1>About Me...</h1>
+        </div>
     </div>
 
-    <main>
+
+
+    <main id="main">
         <div class="main-content">
             <div class="hexagon hex1">
                 <div class="overlay">
-                    <div class="text">About</div>
+                    <div class="text" data-toggle="modal" data-target="#exampleModal">About</div>
                 </div>
             </div>
             <div class="hexagon hex2">
                 <div class="overlay">
-                    <div class="text">Work</div>
+                    <div class="text" data-toggle="modal" data-target="#workModal">Work</div>
                 </div>
             </div>
             <div class="hexagon hex3">
@@ -97,6 +104,111 @@
     </main>
 
 
+    <!-- ABOUT ME -->
+    <div class="modal fade bd-example-modal-lg" id="aboutMe" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">About Me</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 col-lg-4 mt-5 mb-5">
+                                <img src="https://dummyimage.com/600x400/000/fff" width="200" height="300" />
+                            </div>
+                            <div class="col-sm-12 col-md-8 col-lg-8">
+                                <h2 class="header2">Hello, everybody!</h2>
+                                <h1 class="header1 display1">Dara Soumgit</h1>
+                                <h2 class="header2 display2">-- Web Developer</h2>
+                                <p class="display3">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                    printer took a galley of type and scrambled it to make a type specimen book. It has
+                                    survived not only five centuries, but also the leap into electronic typesetting,
+                                    remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                    Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+
+                                <ul class="social-list">
+                                    <li><i class="fa fa-2x fa-location-arrow"></i> Pennsylvania, PA</li>
+                                    <li><i class="fa fa-2x fa-envelope-square"></i> dara.soumgit@gmail.com</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end mt-5 mb-5">
+                            <div class="align-items-end blockquote">
+                                <blockquote>
+                                    <span class="quote">&ldquo;</span>Life is like riding a bicycle. To keep your
+                                    balance, you must keep moving.&rdquo;
+                                    <span class="d-flex justify-content-end author">-- Albert Einstein</span>
+                                </blockquote>
+                            </div>
+
+                            <!-- <ul class="social-list">
+                                <li><i class="fa fa-2x fa-location-arrow"></i> Pennsylvania, PA</li>
+                                <li><i class="fa fa-2x fa-envelope-square"></i> dara.soumgit@gmail.com</li>
+                                <li><i class="fa fa-2x fa-location-arrow"></i></li>
+                                <li><i class="fa fa-2x fa-linkedin"></i></li>
+                                <li><i class="fa fa-2x fa-facebook"></i></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- WORK -->
+    <div class="modal fade bd-example-modal-lg" id="workModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Work</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <img src="https://dummyimage.com/200x300/000/fff" width="200" height="300" />
+                            </div>
+                            <div class="col-sm-12 col-md-8 col-lg-8">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
     <!-- Footer -->
     <footer>
         <div class="p-4 footer-text">
@@ -104,24 +216,12 @@
         </div>
     </footer>
 
-    <script>
-        function ready() {
-            console.log('DOM is ready');
-            // hide loader after 4 sec
-            var loader = document.querySelector('.cssload-box-loading');
 
-            setTimeout(function () {
-                loader.style.display = 'none';
-
-                document.querySelector('.header1').style.opacity = 1;
-                document.querySelector('#social-icon').style.opacity = 1;
-
-                document.querySelector('.main-content').style.opacity = 1;
-            }, 3000);
-        }
-
-        document.addEventListener('DOMContentLoaded', ready);
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
