@@ -5,6 +5,8 @@
 }
 
 body {
+  height: 100%;
+  position: relative;
   font-family: sans-serif;
   background-color: #fff;
 }
@@ -225,65 +227,6 @@ header {
 }
 
 
-/****** FOOTER **********/
-footer {
-    padding: 2rem;
-    background-color: rgb(87, 88, 88);
-
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-}
-
-.social-icons {
-    align-self: center;
-}
-
-.social-icons ul {
-  list-style: none; 
-}
-
-.social-icons ul li {
-  display: inline-block;
-}
-
-.icon {
-    padding: 5px; 
-    color: rgb(226, 223, 223);
-    transition: all .2s;
-}
-
-.facebook:hover {
-    color: rgb(6, 49, 240);
-    transform: translateY(-10%);
-}
-
-.twitter:hover {
-    color: rgb(6, 174, 240);
-}
-
-.linkedin:hover {
-    color: rgb(6, 104, 143);
-}
-
-.youtube:hover {
-    color: rgb(243, 52, 116);
-}
-
-.google-plus:hover {
-    color: rgb(247, 9, 68);
-} 
-
-.footer {
-    padding: 10px;
-    text-align: center;
-    color: rgb(226, 223, 223); 
-    font-size: .8rem;
-}
-
-.footer p {
-  color: rgba(226, 223, 223, .6);
-}
 
 /******** MEDIA QUERIES ************/
 @media screen and (min-width: 750px) {

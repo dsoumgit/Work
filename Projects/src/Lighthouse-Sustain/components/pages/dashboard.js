@@ -11,15 +11,30 @@ import SustainRequest from './SustainRequest/sustainRequest';
 import PointConsumption from './PointConsumption/pointConsumption';
 import FunctionalArea from './FunctionalArea/functionalArea';
 import ContactUs from './ContactUs/contactUs';
+//import Footer from './footer';
 import NotFound from './notfound';
 
 const MainDash = () => (
     <div className="">
-        {/* <MainContent /> */}
         <RequestTracker />
         <AgingReport />
         <SLATracker /> 
         <PointsTracker />
+        {/* <Footer /> */}
+        <footer>
+            <div style={{backgroundColor: 'grey'}}>
+                <div>
+                    <p>Copright</p>
+                </div>
+                <div>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Linkedin</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </div>
 );
 
@@ -29,6 +44,7 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
+        console.log('did mount...');
         // this.props.match.params.subpage
         // add event listener on menu 
         const toggle = document.querySelector('.toggle');
@@ -94,13 +110,14 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 
+            
                 <Switch>
                     <Route exact path="/dashboard/contact-us" component={ContactUs} />
                     <Route exact path="/dashboard/functional-area" component={FunctionalArea} />
                     <Route exact path="/dashboard/sustainment-request" component={SustainRequest} />
                     <Route exact path="/dashboard/point-consumption" component={PointConsumption} />
                     <Route exact path="/dashboard/home" component={MainDash} /> 
-                    <Route path="/*" component={NotFound} />
+                    <Route exact path="/*" component={NotFound} />
                 </Switch>
             </React.Fragment>
         )
