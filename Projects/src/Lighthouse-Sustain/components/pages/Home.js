@@ -89,7 +89,7 @@ class Home extends Component {
                         <img src={logo} alt="Reveal Logo" className="logo-img" />
                     </div>
                     <div className="company-name">
-                        <h1 className="heading-1">Lighthouse Sustainment</h1>
+                        <h1 className="heading-1">oVo Lighthouse Sustainment &trade;</h1>
                     </div>
                 </header>
 

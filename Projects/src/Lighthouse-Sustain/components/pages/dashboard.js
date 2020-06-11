@@ -20,21 +20,6 @@ const MainDash = () => (
         <AgingReport />
         <SLATracker /> 
         <PointsTracker />
-        {/* <Footer /> */}
-        <footer>
-            <div style={{backgroundColor: 'grey'}}>
-                <div>
-                    <p>Copright</p>
-                </div>
-                <div>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Linkedin</li>
-                        <li>Twitter</li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
     </div>
 );
 
