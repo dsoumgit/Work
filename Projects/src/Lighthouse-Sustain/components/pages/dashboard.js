@@ -76,6 +76,10 @@ class Dashboard extends Component {
                         </div>
                         <ul>
                             <li>
+                                <span className="menu-item home"><i className="fas fa-home"></i></span> 
+                                <Link to='/' className="home-link">Home</Link>
+                            </li>
+                            <li>
                                 <span className="menu-item main"><i className="fas fa-industry"></i></span> 
                                 <Link to='/dashboard/home' className="main-link">Main Dashboard</Link>
                             </li>
@@ -104,9 +108,6 @@ class Dashboard extends Component {
                             <i className="fa fa-bars fa-2x"></i>
                         </button>
                         <h1 className="heading-1">Reveal oVo Sustainment</h1>
-                    </div>
-                    <div className="home-icon">
-                        <Link to="/" className="home-link"><i className="fas fa-home"></i></Link>
                     </div>
                 </div>
                 

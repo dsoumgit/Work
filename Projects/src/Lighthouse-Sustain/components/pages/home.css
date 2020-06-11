@@ -28,8 +28,7 @@ p {
 
 header {
     padding: 1rem; 
-    background: linear-gradient(to top right, rgba(107, 202, 247, 0.5), rgba(108, 205, 235, 0.8)); 
-
+    background-image: linear-gradient(45deg, #7deeff, green, #fff531);
     display: flex;
     flex-direction: column;
     *justify-content: flex-start;
