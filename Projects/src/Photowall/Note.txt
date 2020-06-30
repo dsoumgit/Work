@@ -1,0 +1,1 @@
+This app shows how to work with Redux and using Firebase to store pictures in the database. 

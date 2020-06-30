@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+ 
 const Photo = (props) => {
-    
+
     const post = props.post;
 
     return(
@@ -13,7 +13,7 @@ const Photo = (props) => {
             </figcaption>
             <div className="btn-container">
                 <button className="btn-remove" onClick={() => {
-                    props.onRemovePhoto(post)
+                    props.removePost(props.index)
                 }}>Remove</button>
             </div>
         </figure>
@@ -21,8 +21,8 @@ const Photo = (props) => {
 }
 
 Photo.propTypes = {
-    post: PropTypes.object.isRequired,
-    onRemovePhoto: PropTypes.func.isRequired
+    post: PropTypes.object.isRequired
+  //  onRemovePhoto: PropTypes.func.isRequired
 }
 
 export default Photo;

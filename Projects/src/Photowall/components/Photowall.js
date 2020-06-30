@@ -5,7 +5,7 @@ import Photo from './Photo';
 import { Link } from 'react-router-dom';
 
 const Photowall = (props) => {
-    
+
     return(
         <React.Fragment>
             {/*<a href="#add-photo" className="btn-add" onClick={props.onNavigate}></a>*/}
@@ -16,7 +16,7 @@ const Photowall = (props) => {
                     props.posts.sort((a, b) => {
                         return b.id - a.id;
                     })
-                    .map((elem, i) => <Photo key={i} post={elem} onRemovePhoto={props.onRemovePhoto} /> )
+                    .map((elem, i) => <Photo key={i} post={elem} {...props} index={i} /> )
                 }
             </div>
         </React.Fragment>
@@ -25,8 +25,8 @@ const Photowall = (props) => {
 
 Photowall.propTypes = {
     // make sure the posts is an array type that is passing as props from Home component 
-    posts: PropTypes.array.isRequired,
-    onRemovePhoto: PropTypes.func.isRequired 
+    posts: PropTypes.array.isRequired
+ //   onRemovePhoto: PropTypes.func.isRequired 
 }
 
 export default Photowall;

@@ -9,11 +9,25 @@ import ReactDOM from 'react-dom';
 //import Home from './Youtube/components/Home';
 
 
-/* Photowall app 
-import { BrowserRouter } from 'react-router-dom'; 
-import Home from './Photowall/components/Home';
+/* Photowall app */ 
+import { BrowserRouter as Router } from 'react-router-dom'; 
+//import Main from './Photowall/components/Main';
+import { createStore } from 'redux'; 
+import { Provider } from 'react-redux';
+import rootReducer from './Photowall/redux/reducer';
+import App from './Photowall/components/App';
+// create a store 
+const store = createStore(rootReducer);
 // Note: For Photowall app, make sure to wrap the Home within browser router
-*/
+const Home = () => {
+    return (
+        <Provider store={store}>
+            <Router>
+                <App />
+            </Router>
+        </Provider>
+    )
+}
 
 /* 'Songs' app using Redux with React 
 import Home from './Songs/components/Home';
@@ -44,18 +58,18 @@ import reducers from './Blog/reducers/reducers';
 */        
 
 // oVo Sustainment 
-import Main from './Lighthouse-Sustain/components/Main';
+// import Main from './Lighthouse-Sustain/components/Main';
 
-const App = () => {
+// const App = () => {
 
-    return(
-        <Main />
-    )
-}
+//     return(
+//         <Main />
+//     )
+// }
 
 
 ReactDOM.render(
-    <App />,
+    <Home />,
     document.getElementById('root')
 )
 
