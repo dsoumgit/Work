@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './home.css';
 import logo from '../img/reveal-logo-1.png';
+import Footer from './footer';
 import Papa from 'papaparse';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -88,7 +89,7 @@ class Home extends Component {
                         <img src={logo} alt="Reveal Logo" className="logo-img" />
                     </div>
                     <div className="company-name">
-                        <h1 className="heading-1">Lighthouse Sustainment</h1>
+                        <h1 className="heading-1">oVo Lighthouse Sustainment &trade;</h1>
                     </div>
                 </header>
 
@@ -115,31 +116,8 @@ class Home extends Component {
                     </div>
                 </div> 
 
-
-                <footer>
-                    <div className="social-icons">
-                        <ul>
-                            <li>
-                                <a href="https://www.facebook.com/RevealValue/" className="icon facebook"><i className="fab fa-facebook"></i></a>               
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/revealusa" className="icon twitter"><i className="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/company/reveal-usa-inc/" className="icon linkedin"><i className="fab fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/user/RevealValueUSA" className="icon youtube"><i className="fab fa-youtube"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://plus.google.com/106284037178750474606" className="icon google-plus"><i className="fab fa-google-plus"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="footer">
-                        <p>&copy; 2020 Reveal USA, Inc. All rights reserved.</p>
-                    </div>
-                </footer>   
+                <Footer />
+                
             </div>
         )
     }

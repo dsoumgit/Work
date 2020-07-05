@@ -11,11 +11,11 @@ import SustainRequest from './SustainRequest/sustainRequest';
 import PointConsumption from './PointConsumption/pointConsumption';
 import FunctionalArea from './FunctionalArea/functionalArea';
 import ContactUs from './ContactUs/contactUs';
+//import Footer from './footer';
 import NotFound from './notfound';
 
 const MainDash = () => (
     <div className="">
-        {/* <MainContent /> */}
         <RequestTracker />
         <AgingReport />
         <SLATracker /> 
@@ -29,6 +29,7 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
+        console.log('did mount...');
         // this.props.match.params.subpage
         // add event listener on menu 
         const toggle = document.querySelector('.toggle');
@@ -60,6 +61,10 @@ class Dashboard extends Component {
                         </div>
                         <ul>
                             <li>
+                                <span className="menu-item home"><i className="fas fa-home"></i></span> 
+                                <Link to='/' className="home-link">Home</Link>
+                            </li>
+                            <li>
                                 <span className="menu-item main"><i className="fas fa-industry"></i></span> 
                                 <Link to='/dashboard/home' className="main-link">Main Dashboard</Link>
                             </li>
@@ -89,18 +94,16 @@ class Dashboard extends Component {
                         </button>
                         <h1 className="heading-1">Reveal oVo Sustainment</h1>
                     </div>
-                    <div className="home-icon">
-                        <Link to="/" className="home-link"><i className="fas fa-home"></i></Link>
-                    </div>
                 </div>
                 
+            
                 <Switch>
                     <Route exact path="/dashboard/contact-us" component={ContactUs} />
                     <Route exact path="/dashboard/functional-area" component={FunctionalArea} />
                     <Route exact path="/dashboard/sustainment-request" component={SustainRequest} />
                     <Route exact path="/dashboard/point-consumption" component={PointConsumption} />
                     <Route exact path="/dashboard/home" component={MainDash} /> 
-                    <Route path="/*" component={NotFound} />
+                    <Route exact path="/*" component={NotFound} />
                 </Switch>
             </React.Fragment>
         )
