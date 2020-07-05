@@ -44,15 +44,33 @@ import reducers from './Blog/reducers/reducers';
 */        
 
 // oVo Sustainment 
-import Main from './Lighthouse-Sustain/components/Main';
+// import Main from './Lighthouse-Sustain/components/Main';
+
+// const App = () => {
+
+//     return(
+//         <Main />
+//     )
+// }
+
+// Learn-Redux 
+import Home from './Learn-Redux/Home';
+import allReducers from './Learn-Redux/reducers/index';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+const store = createStore(
+    allReducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const App = () => {
-
     return(
-        <Main />
+        <Provider store={store}>
+            <Home />
+        </Provider>
     )
 }
-
 
 ReactDOM.render(
     <App />,
