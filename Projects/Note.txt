@@ -1,0 +1,31 @@
+/*****************************************************************************************/
+* * * * * * * * * * * CONCEPTS * * * * * * * * * * * *  
+* Using arrow function for event handler allows it to automatically bind the 'this' 
+*   keyword to the context when it sees 'this' in the function. That is the benefit 
+*   of using arrow function. So no need to use what is below: 
+*       ex: this.handleNameChange = this.handleNameChange.bind(this)
+*   ex: handleNameChange = (evt) => {
+*           this.setState({ ... });
+*       }
+*
+*       <input type='text' onChange={this.handleNameChange} />
+* 
+* The job of a react developer:
+*   1. Decide on Components 
+*   2. Decide the State and where it lives
+*   3. What changes when state changes
+*
+* ********************* END **************************************************
+*
+*
+* * * * * * * * * * * QUESTIONS: * * * * * * * * * * * *  
+* 1. When do we break things down into components? 
+*       - when it has the same look and functionality
+*       - when we want to reuse it at different places throughout the app or project
+*
+*
+*
+*
+*
+* ****************************************************************************************
+

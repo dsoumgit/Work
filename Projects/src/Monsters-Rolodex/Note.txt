@@ -1,0 +1,12 @@
+/************************************************************************************************/
+*  This is a small app that uses jsonplaceholder api (https://jsonplaceholder.typicode.com/users)  
+*       to fetch the data from the server and display different monster images using this site                                                                                 
+*       (https://robohash.org/2?set=set2) by passing dynamic id to get random image.                                                                                               
+*  Questions to think about: 
+*       1. When do we break 
+*
+*
+*
+*
+*
+/************************************************************************************/
