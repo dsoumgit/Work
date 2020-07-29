@@ -54,6 +54,7 @@ import reducers from './Blog/reducers/reducers';
 // }
 
 // Learn-Redux 
+/*
 import Home from './Learn-Redux/Home';
 import allReducers from './Learn-Redux/reducers/index';
 import { createStore } from 'redux';
@@ -69,6 +70,16 @@ const App = () => {
         <Provider store={store}>
             <Home />
         </Provider>
+    )
+}
+*/
+
+
+// Monsters-Rolodex 
+import Main from './Monsters-Rolodex/Main';
+const App = () => {
+    return (
+        <Main />
     )
 }
 
