@@ -1,0 +1,61 @@
+
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background-image: 
+    linear-gradient(to bottom right,
+    rgba(25, 7, 105, 0.5),
+    rgba(39, 38, 38, 0.5)),
+    url('https://res.cloudinary.com/djpzwzllb/image/upload/v1578338206/Hero-bg_zggja4.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 5em;
+  
+}
+
+.card-container {
+  width: 85vw;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.display-1 {
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 5em;
+  letter-spacing: 5px;
+  color: rgb(16, 221, 108);
+  text-shadow: 2px 2px #fff;
+}
+
+
+.searchbox {
+  text-align: center;
+}
+
+input[type='text'] {
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+}
+
+
