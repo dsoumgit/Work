@@ -15,6 +15,18 @@
 *   2. Decide the State and where it lives
 *   3. What changes when state changes
 *
+* React Concepts:   
+*   1. Don't touch the DOM. I'll do it.
+*   2. Build websites like lego blocks
+*   3. Unidirectional data flow
+*   4. UI, The rest is up to you
+* React Keywords:
+*   - Declarative: this means we never interact with DOM. The UI is updated when we change the state.
+*   - JSX
+*   - Components 
+*   - State
+*   - Props
+*   - VirtualDOM
 * ********************* END **************************************************
 *
 *
