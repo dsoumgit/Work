@@ -1,0 +1,46 @@
+footer {
+  background-color: rgb(40, 41, 43);
+  color: #ffffff;
+  font-size: 0.8em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 16px;
+    color: grey;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.social-item {
+    list-style: none;
+    display: flex;
+}
+
+.social-item li {
+    margin-right: 10px;
+}
+
+.fa-linkedin-square {
+    color: #0e76a8;
+}
+
+.fa-twitter-square {
+    color: rgb(29,161,242);
+}
+
+.fa-linkedin-square:hover,
+.fa-twitter-square:hover {
+    transform: rotate(360deg) scale(1);
+    transition: linear 1s;
+    cursor: pointer;
+}
