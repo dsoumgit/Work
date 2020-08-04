@@ -8,7 +8,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ["babel-loader"]
             },
-            /*{
+            {
                 test: /\.s[ac]ss$/i,
                 use: [
                     // Creates `style` nodes from JS strings
@@ -18,14 +18,6 @@ module.exports = {
                     // Compiles Sass to CSS
                     'sass-loader',
                 ],
-            },*/
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    'style-loader', 
-                    'css-loader',
-                    'sass-loader'
-                ]
             },
             {
                 test: /\.(png|svg|jpg|gif|pdf)$/,
@@ -36,7 +28,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx']
+        extensions: ['*', '.js', '.jsx', '.scss']
     },
     output: {
         path: __dirname + '/dist',

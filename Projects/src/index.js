@@ -84,10 +84,19 @@ const App = () => {
 // }
 
 // Porfolio-App
-import Main from './Porfolio-App/components/Main';
+// import Main from './Porfolio-App/components/Main';
+// const App = () => {
+//     return(
+//         <Main />
+//     )
+// }
+
+
+// eCommerce-Platform app
+import Homepage from './eCommerce-Platform/pages/homepage/Homepage';
 const App = () => {
     return(
-        <Main />
+        <Homepage />
     )
 }
 
