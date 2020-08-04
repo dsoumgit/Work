@@ -93,10 +93,11 @@ const App = () => {
 
 
 // eCommerce-Platform app
-import Homepage from './eCommerce-Platform/pages/homepage/Homepage';
+import Main from './eCommerce-Platform/Main';
+
 const App = () => {
     return(
-        <Homepage />
+        <Main />
     )
 }
 

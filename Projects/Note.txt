@@ -9,6 +9,9 @@
 *       }
 *
 *       <input type='text' onChange={this.handleNameChange} />
+*
+* Higher Order Component is a function that takes a component as an argument and returns a 
+*   modified component. Ex: withRouter is a HOC.
 * 
 * The job of a react developer:
 *   1. Decide on Components 
