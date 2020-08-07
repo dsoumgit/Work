@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.style.scss';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 // special react component
 import logo from '../../assets/crown.svg';
 
@@ -8,16 +8,17 @@ const Header = () => {
 
     return (
         <div className="header">
-            <Link to="/" className="logo-container">
+            <NavLink to="/" className="logo-container">
                 <img src={logo} alt="Site Logo" className="logo" />
-            </Link>
+            </NavLink>
             <div className="options">
-                <Link to="/shop" className="option">
+                
+                <NavLink to="/shop" activeClassName="active" className="option">
                     SHOP
-                    </Link>
-                <Link to="/contact" className="option">
+                    </NavLink>
+                <NavLink to="/contact" activeClassName="active" className="option">
                     CONTACT
-                    </Link>
+                        </NavLink>
             </div>
         </div>
     )

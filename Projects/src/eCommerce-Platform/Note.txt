@@ -1,0 +1,7 @@
+/******************************************************************************************
+***** Application Design: ***************
+*   - For Sign In and Sign Out page, we create one page that holds both Sign In and Sign Out 
+*       page. Sign In page would have its own state as well as Sign Out page because they
+*       both do not need to talk to each other. 
+*   -----------------------------------------------------------
+*
