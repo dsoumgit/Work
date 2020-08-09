@@ -12,7 +12,6 @@ class ShopPage extends Component {
         }
     }
 
-
     render() {
 
         // destructing 

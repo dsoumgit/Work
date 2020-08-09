@@ -6,7 +6,7 @@ import logo from '../../assets/crown.svg';
 import { auth } from '../../firebase/firebase.util';
 
 const Header = ({ user }) => {
-console.log(user);
+    
     return (
         <div className="header">
             <NavLink to="/" className="logo-container">

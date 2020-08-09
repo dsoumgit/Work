@@ -14,13 +14,47 @@ const config = {
     measurementId: "G-QVCEQ91H7R"
 };
 
+// function to check and create a user in the database 
+// this is an async function 
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+    // check the user if doesn't exist
+    if (!userAuth) return; // return nothing
+    
+    // if exists, using document reference object to store uid (uid is unique for each gmail account)
+    const userRef = firestore.doc(`users/${userAuth.uid}`);
+    const snapShot = await userRef.get();
+    // check 
+    if (!snapShot.exists) {
+        // create it and we have to use document reference object 
+        // destructing from user auth 
+        const { displayName, email } = userAuth;
+        // store created date 
+        const createdAt = new Date();
+
+        // store in the database 
+        try {
+            await userRef.set({
+                displayName,
+                email,
+                createdAt,
+                ...additionalData
+            })
+        } catch (error) {
+            console.log('error creating a user', error.message);
+        }
+    }
+
+    return userRef;
+}
+
 // Initialize Firebase
 firebase.initializeApp(config);
 //firebase.analytics();
 
 // export it so we can use when it deals with authentication
 export const auth = firebase.auth();    
-export const firestone = firebase.firestore();
+// firestone for database 
+export const firestore = firebase.firestore();
 
 // access the auth class 
 const provider = new firebase.auth.GoogleAuthProvider();
