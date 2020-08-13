@@ -3,7 +3,7 @@ import './sign-in.style.scss';
 import FormInput from '../form-input/form-input';
 import CustomButton from '../custom-button/custom-button';
 // firebase 
-import { signInWithGoogle } from '../../firebase/firebase.util';
+import { signInWithGoogle, auth } from '../../firebase/firebase.util';
 
 class SignIn extends Component {
     constructor() {
@@ -15,14 +15,20 @@ class SignIn extends Component {
         }
     }
 
-    handleSubmit = evt => {
+    handleSubmit = async evt => {
         evt.preventDefault();
 
-        // clear the fields 
-        this.setState({
-            email: '',
-            password: ''
-        })
+        const { email, password } = this.state; 
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password); 
+            this.setState({
+                email: '',
+                password: ''
+            })
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     // using the same onChange evnts to update the value 
