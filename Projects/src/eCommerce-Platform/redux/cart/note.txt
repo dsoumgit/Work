@@ -1,0 +1,1 @@
+We need to add the state as a global so it can access anywhere in the app. 
