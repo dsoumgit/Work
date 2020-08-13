@@ -4,8 +4,9 @@ import { NavLink, Link } from 'react-router-dom';
 // special react component
 import logo from '../../assets/crown.svg';
 import { auth } from '../../firebase/firebase.util';
+import { connect } from 'react-redux';
 
-const Header = ({ user }) => {
+const Header = ({ currentUser }) => {
     
     return (
         <div className="header">
@@ -20,7 +21,7 @@ const Header = ({ user }) => {
                     CONTACT
                 </NavLink>
                 {
-                    user ? 
+                    currentUser ? 
                     <div className="option" onClick={() => auth.signOut()}>
                         SIGN OUT
                     </div>
@@ -32,4 +33,9 @@ const Header = ({ user }) => {
     )
 }
 
-export default Header;
+// redux connect 
+const mapToStateProps = state => ({
+    currentUser: state.user.currentUser
+});
+
+export default connect(mapToStateProps)(Header);

@@ -94,10 +94,14 @@ const App = () => {
 
 // eCommerce-Platform app
 import Main from './eCommerce-Platform/Main';
+import { Provider } from 'react-redux';
+import store from './eCommerce-Platform/redux/store';
 
 const App = () => {
     return(
-        <Main />
+        <Provider store={store}>
+            <Main />
+        </Provider>
     )
 }
 
