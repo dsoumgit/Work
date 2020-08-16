@@ -14,11 +14,14 @@
     border: none;
     cursor: pointer;
     margin-right: 20px;
+    display: flex;
+    justify-content: center;
     
     &:hover {
       background-color: white;
       color: black;
       text-decoration: underline;
+      border: 1px solid black;
     }
 
     &.google-sign-in {
@@ -27,6 +30,18 @@
         &:hover {
             background-color: #fff;
         }
+    }
+
+    &.inverted {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid black;
+
+      &:hover {
+        background-color: #000;
+        color: #fff;
+        border: none;
+      }
     }
   }
   
