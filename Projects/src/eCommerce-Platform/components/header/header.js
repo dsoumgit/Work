@@ -7,6 +7,9 @@ import { NavLink, Link } from 'react-router-dom';
 import logo from '../../assets/crown.svg';
 import { auth } from '../../firebase/firebase.util';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from '../../redux/user/user-selector';
+import { selectCartHidden } from '../../redux/cart/cart-selector';
 
 const Header = ({ currentUser, hidden }) => {
 
@@ -43,9 +46,16 @@ const Header = ({ currentUser, hidden }) => {
 }
 
 // destructing the state. Nested values
-const mapToStateProps = ({ user: { currentUser} , cart: { hidden } }) => ({
-    currentUser,
-    hidden
-});
+// const mapToStateProps = ({ user: { currentUser} , cart: { hidden } }) => ({
+//     currentUser,
+//     hidden
+// });
+
+// using the reselect instead of above 
+const mapToStateProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden
+})
+
 
 export default connect(mapToStateProps)(Header);
