@@ -9,13 +9,13 @@
   
     .image-container {
       width: 23%;
-      padding-right: 15px;
   
       img {
-        width: 100%;
-        height: 100%;
+        width: 50%;
+        height: 50%;
       }
     }
+
     .name,
     .quantity,
     .price {
@@ -23,12 +23,25 @@
     }
   
     .quantity {
-      padding-left: 20px;
+      display: flex;
+
+      .arrow {
+        cursor: pointer;
+      }
+
+      .arrow:hover {
+        color: rgb(0, 174, 255);
+      }
+
+      .value {
+        margin: 0 10px;
+      }
     }
-  
+    
     .remove-button {
       padding-left: 12px;
       cursor: pointer;
+      color: red;
     }
   }
   

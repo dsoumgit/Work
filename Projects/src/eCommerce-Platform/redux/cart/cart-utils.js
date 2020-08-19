@@ -33,3 +33,23 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
     // return a new array. Quantity property is added and starts at 1 as an initial.
     return [ ...cartItems, { ...cartItemToAdd, quantity: 1 } ];
 }
+
+// remove item 
+export const removeItemToCart = (cartItems, cartItemToRemove) => {
+    // find 
+    const existingItem = cartItems.find(item => item.id === cartItemToRemove.id);
+
+    // if found, check the quantity 
+    if (existingItem.quantity === 1) {
+        // remove it 
+        return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
+    }
+
+    // decrease the quanity by 1
+    return cartItems.map(item => 
+            item.id === cartItemToRemove.id ? 
+                { ...item, quantity: item.quantity - 1} 
+                : 
+                item 
+        );
+};
