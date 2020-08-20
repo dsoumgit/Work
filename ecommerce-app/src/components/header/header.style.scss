@@ -1,0 +1,30 @@
+.header {
+  height: 70px;
+  width: 95vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  
+    .option {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  }
+}
+
+.active {
+  color: black;
+  font-weight: bold;
+}
+
+.signout {
+  color: grey;
+}
