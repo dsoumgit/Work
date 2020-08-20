@@ -95,12 +95,17 @@ const App = () => {
 // eCommerce-Platform app
 import Main from './eCommerce-Platform/Main';
 import { Provider } from 'react-redux';
-import store from './eCommerce-Platform/redux/store';
+// can be used for other platform like React native, etc.
+// this one is specifically for React 
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './eCommerce-Platform/redux/store';
 
 const App = () => {
     return(
         <Provider store={store}>
-            <Main />
+            <PersistGate persistor={persistor}>
+                <Main />
+            </PersistGate>
         </Provider>
     )
 }

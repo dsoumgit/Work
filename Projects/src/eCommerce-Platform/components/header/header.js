@@ -19,19 +19,22 @@ const Header = ({ currentUser, hidden }) => {
                 <img src={logo} alt="Site Logo" className="logo" />
             </NavLink>
             <div className="options">
-                <NavLink to="/shop" activeClassName="active" className="option">
+                <NavLink to="/" exact={true} className="option">
+                    HOME
+                </NavLink>
+                <NavLink to="/shop" className="option">
                     SHOP
                 </NavLink>
-                <NavLink to="/contact" activeClassName="active" className="option">
+                <NavLink to="/contact" className="option">
                     CONTACT
                 </NavLink>
                 {
                     currentUser ?
-                        <div className="option" onClick={() => auth.signOut()}>
+                        <div className="option signout" onClick={() => auth.signOut()}>
                             SIGN OUT
                     </div>
                         :
-                        <NavLink to="/signin" activeClassName="active" className="option">SIGN IN</NavLink>
+                        <NavLink to="/signin" className="option">SIGN IN</NavLink>
                 }
 
                 <CartIcon />
