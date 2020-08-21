@@ -22,11 +22,28 @@
         }
       }
     }
-  
+
+    buttton {
+      margin-left: auto;
+      margin-top: 50px;
+    }
+    
     .total {
       margin-top: 30px;
       margin-left: auto;
       font-size: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .test-warning {
+      text-align-last: center;
+      margin-top: 40px; 
+      color: red;
+      font-size: 24px;
     }
   }
+  
   
