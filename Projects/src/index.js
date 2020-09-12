@@ -84,12 +84,33 @@ const App = () => {
 // }
 
 // Porfolio-App
-import Main from './Porfolio-App/components/Main';
-const App = () => {
-    return(
-        <Main />
-    )
-}
+// import Main from './Porfolio-App/components/Main';
+// const App = () => {
+//     return(
+//         <Main />
+//     )
+// }
+
+
+// eCommerce-Platform app
+// import Main from './eCommerce-Platform/Main';
+// import { Provider } from 'react-redux';
+// // can be used for other platform like React native, etc.
+// // this one is specifically for React 
+// import { PersistGate } from 'redux-persist/integration/react';
+// import { store, persistor } from './eCommerce-Platform/redux/store';
+
+// const App = () => {
+//     return(
+//         <Provider store={store}>
+//             <PersistGate persistor={persistor}>
+//                 <Main />
+//             </PersistGate>
+//         </Provider>
+//     )
+// }
+
+import App from './Advanced_Concepts/Hooks/App';
 
 ReactDOM.render(
     <App />,
