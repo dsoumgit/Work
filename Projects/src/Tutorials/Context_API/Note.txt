@@ -1,0 +1,10 @@
+******************************************************************************
+* Context API solves the issue where we pass the props manually through 
+*   the component tree at every level.
+* Context API provides a way to make particular data available to all components 
+*   throughout the component tree without having to pass props down manually 
+*   at every level. With Context, every component in the component tree has 
+*   access to whatever data we decide to put in our context.
+* We use React.createContext() to create a context object. It can pass anything as 
+*   an argument.
+

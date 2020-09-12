@@ -110,7 +110,7 @@ const App = () => {
 //     )
 // }
 
-import App from './Advanced_Concepts/Hooks/App';
+import App from './Tutorials/Context_API/App';
 
 ReactDOM.render(
     <App />,
