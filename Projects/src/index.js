@@ -110,10 +110,19 @@ const App = () => {
 //     )
 // }
 
-import App from './Tutorials/Context_API/App';
+//import App from './Tutorials/Context_API/App';
+
+import App from './Learn-Redux/App';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './Learn-Redux/reducers/reducer';
+
+const store = createStore(reducer);
 
 ReactDOM.render(
-    <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('root')
 )
 
